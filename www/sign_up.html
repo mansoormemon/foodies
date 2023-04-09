@@ -67,18 +67,24 @@
 
                             <div class="mb-3">
                                 <label for="signUpPassword" class="form-label">Password:</label>
-                                <input type="password" class="form-control" id="signUpPassword" height="32px"
-                                    minlength="8" required>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="signUpPassword" height="32px"
+                                        minlength="8" required>
+                                    <span class="input-group-text" id="signUpShowPassword">
+                                        <i class="fa fa-eye" id="signUpEye" aria-hidden="true"></i>
+                                        <i class="fa fa-eye-slash d-none" id="signUpEyeSlash" aria-hidden="true"></i>
+                                    </span>
+                                </div>
                             </div>
 
                             <div class="mb-3">
                                 <label for="signUpContact" class="form-label">Contact:</label>
-                                <div class="mb-3 input-group">
+                                <div class="input-group">
                                     <span class="input-group-text"><img src="../res/icons/flag_pk.png"
                                             height="24px"></span>
                                     <span class="input-group-text">+92</span>
                                     <input type="tel" class="form-control" id="signUpContact" height="32px"
-                                        pattern="[0-9]{10}" required>
+                                        pattern="[0-9]{3}-[0-9]{7}" required>
                                 </div>
                             </div>
 

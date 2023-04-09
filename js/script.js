@@ -9,6 +9,15 @@ $(document).ready(
             }
         );
 
+        $("#signUpShowPassword").click(
+            () => {
+                var signUpPassword = $("#signUpPassword");
+                signUpPassword.attr('type', signUpPassword.attr('type') == "password" ? "text" : "password");
+                $("#signUpEye").toggleClass('d-none');
+                $("#signUpEyeSlash").toggleClass('d-none');
+            }
+        );
+
         // Fetch all the forms we want to apply custom Bootstrap validation styles.
         var forms = document.querySelectorAll('.needs-validation')
 
@@ -23,9 +32,6 @@ $(document).ready(
 
                     form.classList.add('was-validated')
                 }, false)
-            })
-
-        $(".form-check").css("color", "#0f0f0f");
-
+            });
     }
 );
