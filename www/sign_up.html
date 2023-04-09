@@ -59,17 +59,19 @@
                         <h1 class="display-6 text-warning text-center">Create your account</h1>
 
                         <form class="p-5 needs-validation" novalidate>
+                            <!-- Email -->
                             <div class="mb-3">
                                 <label for="signUpEmail" class="form-label">Email:</label>
-                                <input type="email" class="form-control" id="signUpEmail" height="32px" required
-                                    autofocus>
+                                <input type="email" class="form-control" id="signUpEmail" name="signUpEmail"
+                                    height="32px" required autofocus>
                             </div>
 
+                            <!-- Password Field -->
                             <div class="mb-3">
                                 <label for="signUpPassword" class="form-label">Password:</label>
                                 <div class="input-group">
-                                    <input type="password" class="form-control" id="signUpPassword" height="32px"
-                                        minlength="8" required>
+                                    <input type="password" class="form-control" id="signUpPassword"
+                                        name="signUpPassword" height="32px" minlength="8" required>
                                     <span class="input-group-text" id="signUpShowPassword">
                                         <i class="fa fa-eye" id="signUpEye" aria-hidden="true"></i>
                                         <i class="fa fa-eye-slash d-none" id="signUpEyeSlash" aria-hidden="true"></i>
@@ -77,17 +79,20 @@
                                 </div>
                             </div>
 
+                            <!-- Contact -->
                             <div class="mb-3">
                                 <label for="signUpContact" class="form-label">Contact:</label>
                                 <div class="input-group">
-                                    <span class="input-group-text"><img src="../res/icons/flag_pk.png"
-                                            height="24px"></span>
+                                    <span class="input-group-text">
+                                        <img src="../res/icons/flag_pk.png" height="24px">
+                                    </span>
                                     <span class="input-group-text">+92</span>
-                                    <input type="tel" class="form-control" id="signUpContact" height="32px"
-                                        pattern="[0-9]{3}-[0-9]{7}" required>
+                                    <input type="tel" class="form-control" id="signUpContact" name="signUpContact"
+                                        height="32px" pattern="[0-9]{3}-[0-9]{7}" required>
                                 </div>
                             </div>
 
+                            <!-- Terms and Conditions -->
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input" id="signUpAgreementChk" required>
                                 <label for="signUpAgreementChk">
@@ -100,6 +105,7 @@
 
                             <br>
 
+                            <!-- Submit -->
                             <div class="d-grid gap-2">
                                 <button class="btn btn-warning" type="submit" id="signUpSubmit" disabled>Submit</button>
                             </div>
@@ -120,7 +126,7 @@
         </div>
     </div>
 
-    <!-- Terms and Conditions -->
+    <!-- Terms and Conditions (Modal Dialog) -->
     <div class="modal fade" id="signUpTermsDialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="signUpTermsDialogLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
