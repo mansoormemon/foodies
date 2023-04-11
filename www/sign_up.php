@@ -58,7 +58,7 @@
 
                         <h1 class="display-6 text-warning text-center">Create your account</h1>
 
-                        <form class="p-5 needs-validation" novalidate>
+                        <form class="p-5 needs-validation" novalidate action=sign_up_inc.php method="post">
                             <!-- Email -->
                             <div class="mb-3">
                                 <label for="signUpEmail" class="form-label">Email:</label>
