@@ -1,0 +1,1138 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container1 {
+    margin-bottom: 9vh;
+}
+
+.hamburg div {
+    width: 3vw;
+    height: 0.5vh;
+    background: black;
+    margin-top: 3px;
+    border-radius: 3px;
+}
+
+.hamburg {
+    cursor: pointer;
+    position: relative;
+    left: 94vw;
+    bottom: 73.5vh;
+    display: none;
+}
+
+.logo {
+    background-image: url(../res/images/logo.png);
+    background-size: cover;
+    width: 4vw;
+    height: 6.2vh;
+    position: relative;
+    bottom: 90vh;
+    left: 2.5vw;
+}
+
+.catchy1 {
+    margin-top: 1vh;
+    margin-bottom: 6vh;
+    width: 50vw;
+    font-size: 12vh;
+    font-family: 'Dancing Script', cursive;
+    color: #ff7575;
+}
+
+.catchy2 {
+    margin-top: 1vh;
+    margin-bottom: 6vh;
+    width: 50vw;
+    font-size: 12vh;
+    font-family: 'Dancing Script', cursive;
+    color: #30a630;
+}
+
+.ticklogo {
+    background-image: url(../../../ticklogo.jpg);
+    background-size: cover;
+    width: 27vw;
+    height: 56vh;
+    border: 4px solid green;
+    border-radius: 2000px;
+}
+
+.bighead {
+    font-family: 'Roboto', sans-serif;
+    font-size: 8vh;
+    margin-left: 2vw;
+}
+
+.restchain {
+    display: grid;
+    grid-template-columns: 18.5vw 18.5vw 18.5vw 18.5vw;
+    grid-template-rows: 65vh;
+    column-gap: 3vw;
+    margin-top: 3vh;
+    margin-bottom: 10vh;
+    margin-left: 2vw;
+}
+
+.for-color {
+    background-color: rgb(255, 254, 234);
+    height: 225vh;
+    margin-bottom: 10vh;
+
+}
+
+.hammenu {
+    height: 44vh;
+    background-image: linear-gradient(rgb(250, 199, 209), rgb(249, 192, 201), rgb(260, 200, 215), rgb(270, 205, 230));
+    display: none;
+
+}
+
+.hamitem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.hamitem a {
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Heebo', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 2.5vh;
+    color: black;
+    margin-top: 3vh;
+}
+
+.after-main3 {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 18vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ordernow {
+    display: none;
+    font-family: 'Dancing Script', cursive;
+    font-size: 5vh;
+}
+
+.picbox {
+    background-image: url(../../../template.jpg);
+    background-size: cover;
+    width: 30vw;
+    height: 42vh;
+    border-radius: 60px;
+    position: relative;
+    left: 10vw;
+    top: 12vh;
+}
+
+.fastfood {
+    background-image: url(../../../burger24.jpg);
+    width: 31vw;
+    height: 64vh;
+    background-size: cover;
+    border-radius: 17px;
+}
+
+.catchy3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 12vh;
+    color: #595959;
+}
+
+.after-main1 {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5vh;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2vh;
+}
+
+.after-main2 {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 5vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bigpic {
+    background-image: url(../../../burger23.jpg);
+    background-size: cover;
+    min-width: 470px;
+    min-height: 480px;
+    border-radius: 17px;
+    margin-top: 10vh;
+}
+
+.foodsection {
+    width: 97%;
+    height: 120vh;
+    display: grid;
+    row-gap: 4vh;
+}
+
+.smallbox {
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+
+}
+
+.twotext {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 58%;
+}
+
+.h3 {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2vh;
+    color: rgb(47, 47, 47);
+}
+
+.h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4vh;
+}
+
+.bgbox1 {
+    height: 18vh;
+    width: 12vw;
+    border: 2px solid black;
+}
+
+.bgbox2 {
+    height: 18vh;
+    width: 12vw;
+    border: 2px solid black;
+}
+
+.bgbox3 {
+    height: 18vh;
+    width: 12vw;
+    border: 2px solid black;
+}
+
+.bgbox4 {
+    height: 18vh;
+    width: 13vw;
+    border: 2px solid black;
+}
+
+.bgbox5 {
+    height: 18vh;
+    width: 12vw;
+    border: 2px solid black;
+}
+
+.bgbox6 {
+    height: 18vh;
+    width: 12vw;
+    border: 2px solid black;
+}
+
+.bgbox7 {
+    height: 18vh;
+    width: 12vw;
+    border: 2px solid black;
+}
+
+.bgbox8 {
+    height: 18vh;
+    width: 12vw;
+    border: 2px solid black;
+}
+
+.bgbox9 {
+    height: 18vh;
+    width: 12vw;
+    border: 2px solid black;
+}
+
+.bgbox10 {
+    height: 18vh;
+    width: 12vw;
+    border: 2px solid black;
+}
+
+.bgbox11 {
+    height: 18vh;
+    width: 12vw;
+    border: 2px solid black;
+}
+
+.bgbox12 {
+    height: 18vh;
+    width: 12vw;
+    border: 2px solid black;
+}
+
+.bgbox13 {
+    height: 18vh;
+    width: 12vw;
+    border: 2px solid black;
+}
+
+.bgbox14 {
+    height: 18vh;
+    width: 12vw;
+    border: 2px solid black;
+}
+
+.bgbox15 {
+    height: 18vh;
+    width: 12vw;
+    border: 2px solid black;
+}
+
+.bonus1 {
+    background-image: url(../../../bonus.jpg);
+    background-size: cover;
+    width: 25vw;
+    height: 48vh;
+}
+
+.bonus2 {
+    background-image: url(../../../wallet.jpg);
+    background-size: cover;
+    width: 26vw;
+    height: 48vh;
+}
+
+.bonusbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 98vw;
+    margin-top: 5vh;
+}
+
+.pack {
+    display: flex;
+    flex-direction: row;
+}
+
+.arrowbox {
+    display: flex;
+    flex-direction: row;
+}
+
+.coin {
+    background-image: url(../../../coin.jpg);
+    background-size: cover;
+    width: 26vw;
+    height: 47vh;
+    position: relative;
+    left: 36vw;
+    bottom: 6vh;
+}
+
+.trendhead {
+    font-family: 'Roboto', sans-serif;
+    font-size: 8vh;
+    position: relative;
+    left: 2vw;
+    width: 90vw;
+}
+
+.manbox {
+    width: 98vw;
+    height: 124vh;
+    margin-bottom: 70vh;
+}
+
+.man {
+    background-image: url(../../../happyman1.jpg);
+    background-size: cover;
+    width: 52vw;
+    height: 123vh;
+    position: relative;
+    left: 17vw;
+    top: 4vh;
+}
+
+.redeem {
+    cursor: pointer;
+    width: 15vw;
+    height: 8.5vh;
+    background-color: pink;
+    border-radius: 11px;
+    border: 1px solid pink;
+    font-family: 'Roboto', sans-serif;
+    font-size: 3.2vh;
+    color: white;
+    letter-spacing: 0.7px;
+    position: relative;
+    left: 16vw;
+    bottom: 30vh;
+}
+
+.arrow1 {
+    background-image: url(../../../arrow.jpg);
+    background-size: cover;
+    width: 26vw;
+    height: 36vh;
+    transform: scaleY(-1);
+    position: relative;
+    left: 34vw;
+    bottom: 35vh;
+    rotate: 12deg;
+}
+
+.arrow2 {
+    background-image: url(../../../arrow.jpg);
+    background-size: cover;
+    width: 26vw;
+    height: 36vh;
+    position: relative;
+    left: -15vw;
+    bottom: -15vh;
+    rotate: 32deg;
+}
+
+.arrow3 {
+    background-image: url(../../../arrow.jpg);
+    background-size: cover;
+    width: 26vw;
+    height: 36vh;
+    position: relative;
+    left: 8vw;
+    bottom: -15vh;
+    transform: scaleX(-1);
+    rotate: -35deg;
+}
+
+.bonus-head {
+    /* font-family: 'Anuphan', sans-serif; */
+    font-family: 'Roboto', sans-serif;
+    font-size: 8vh;
+    letter-spacing: 1px;
+    margin-left: 2vw;
+}
+
+.bonuspage {
+    width: 98vw;
+    height: 140vh;
+    margin-bottom: 32vh;
+}
+
+.catchy {
+    font-size: 8vh;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    margin-left: 2vw;
+    margin-top: 1vw;
+    margin-bottom: 2vh;
+    width: 85vw;
+}
+
+.my-nav {
+    background-color: #fbcdd5;
+    width: 100%;
+    height: 9vh;
+    display: flex;
+    align-items: center;
+}
+
+.items a {
+    text-decoration: none;
+    list-style: none;
+    margin-left: 6vw;
+    font-family: 'Heebo', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 2.5vh;
+    color: black;
+}
+
+.items {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    left: 3vw;
+    bottom: 0.4vh;
+}
+
+.end {
+    position: relative;
+    left: 16.5vw;
+}
+
+hr {
+    color: #ffbbc7;
+}
+
+.main-display {
+    width: 100%;
+    height: 73vh;
+    background-image: linear-gradient(rgb(250, 199, 209), rgb(249, 192, 201), rgb(260, 200, 215), rgb(270, 205, 230));
+    display: flex;
+    flex-direction: row;
+}
+
+.buttonbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2vh;
+    width: 27vw;
+}
+
+.main-display-left {
+    display: flex;
+    flex-direction: column;
+    width: 44vw;
+    height: 55vh;
+    margin-left: 9vw;
+    margin-top: 10vh;
+}
+
+.main-display-left p {
+    font-size: 7.5vh;
+    font-family: 'Inter', sans-serif;
+    color: #fb6193;
+    font-weight: bold;
+    line-height: 10vh;
+}
+
+.main-display-left button {
+    width: 13vw;
+    height: 7.5vh;
+    background-color: pink;
+    border: 2px solid pink;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    color: #fb6193;
+    font-size: 2.3vh;
+    cursor: pointer;
+}
+
+.main-display-left button:hover {
+    width: 14vw;
+    height: 8vh;
+    margin-right: 1vw;
+    margin-left: 1vw;
+}
+
+@media only screen and (max-width:1575px) {
+    .main-display-left p {
+        font-size: 7vh;
+    }
+
+    .picbox {
+        width: 29vw;
+        height: 40.6vh;
+        border-radius: 54px;
+    }
+
+    .end {
+        left: 16vw;
+    }
+
+    .catchy2 {
+        font-size: 10.9vh;
+    }
+
+    .ticklogo {
+        width: 25vw;
+        height: 51vh;
+    }
+
+    .bighead {
+        font-size: 8.4vh;
+    }
+
+}
+
+@media only screen and (min-width:1410px) and (max-width:1575px) {
+    .fastfood {
+        width: 430px;
+        height: 470px;
+    }
+
+    .catchy3 {
+        font-size: 11vh;
+    }
+}
+
+@media only screen and (max-width:1530px) {
+    .ticklogo {
+        width: 25vw;
+        height: 49vh;
+    }
+}
+
+@media only screen and (max-width:1470px) {
+    .main-display-left p {
+        font-size: 6.5vh;
+    }
+
+    .picbox {
+        width: 28vw;
+        height: 39.2vh;
+        border-radius: 49px;
+    }
+
+    .buttonbox {
+        width: 23vw;
+    }
+
+    .buttonbox button {
+        width: 11vw;
+        height: 6.5vh;
+    }
+}
+
+@media only screen and (max-width:1410px) {
+    .end {
+        left: 12.5vw;
+    }
+
+    .bigpic {
+        min-width: 430px;
+        min-height: 440px;
+    }
+
+    .catchy1 {
+        font-size: 11vh;
+    }
+
+    .catchy2 {
+        font-size: 10.5vh;
+    }
+
+    .ticklogo {
+        width: 24vw;
+        height: 44vh;
+    }
+
+    .catchy {
+        font-size: 6.8vh;
+    }
+
+    .fastfood {
+        width: 390px;
+        height: 435px;
+    }
+
+    .catchy3 {
+        font-size: 10.5vh;
+    }
+
+    .bighead {
+        font-size: 8vh;
+    }
+}
+
+@media only screen and (max-width:1366px) {
+    .main-display-left p {
+        font-size: 5.5vh;
+    }
+
+    .catchy2 {
+        font-size: 10.3vh;
+        min-width: 100px;
+    }
+
+    .ticklog {
+        width: 22.5vw;
+        height: 40vh;
+        border-radius: 3000px;
+    }
+
+    .fastfood {
+        width: 380px;
+        height: 420px;
+    }
+
+    .catchy3 {
+        font-size: 10.4vh;
+    }
+
+    .bighead {
+        font-size: 7.5vh;
+    }
+}
+
+@media only screen and (max-width:1300px) {
+    .end {
+        left: 11vw;
+    }
+
+    .catchy {
+        font-size: 6.5vh;
+    }
+
+    .catchy1 {
+        font-size: 10vh;
+    }
+
+    .bigpic {
+        min-width: 400px;
+        min-height: 410px;
+    }
+
+    .picbox {
+        /* display:none; */
+    }
+
+    .items a {
+        font-size: 2.4vh;
+    }
+
+    .bighead {
+        font-size: 7vh;
+    }
+}
+
+@media only screen and (max-width:1330px) {
+    .catchy2 {
+        width: 55vw;
+    }
+
+    .ticklogo {
+        width: 25vw;
+    }
+}
+
+@media only screen and (max-width:1230px) {
+    .bigpic {
+        min-width: 370px;
+        min-height: 380px;
+    }
+
+    .catchy1 {
+        font-size: 9vh;
+    }
+
+    .bighead {
+        font-size: 6.4vh;
+    }
+
+    .catchy {
+        font-size: 6vh;
+    }
+}
+
+@media only screen and (min-width:1200px) and (max-width:1230px) {
+    .ticklogo {
+        min-width: 329px;
+        min-height: 300px;
+    }
+}
+
+@media only screen and (max-width:1200px) {
+    .end {
+        left: 9vw;
+    }
+
+    .main-display {
+        height: 62vh;
+    }
+
+    .main-display-left {
+        margin-top: 7vh;
+    }
+
+    .logo {
+        bottom: 78vh;
+    }
+
+    .catchy2 {
+        font-size: 8.8vh;
+    }
+
+    .ordernow {
+        display: inline-block;
+        font-size: 12.5vh;
+        position: relative;
+        left: 15vw;
+        top: 14vh;
+        width: 21vw;
+        color: black;
+    }
+
+    .picbox {
+        display: none;
+    }
+
+    .ticklogo {
+        min-width: 300px;
+        max-height: 297px;
+    }
+
+    .fastfood {
+        width: 340px;
+        height: 370px;
+    }
+
+    .catchy3 {
+        font-size: 8.8vh;
+    }
+
+    .bighead {
+        font-size: 6.2vh;
+    }
+}
+
+@media only screen and (max-width:1134px) {
+    .end {
+        left: 7vw;
+    }
+
+    .items a {
+        font-size: 2.2vh;
+    }
+
+    .main-display-left p {
+        font-size: 4.5vh;
+    }
+
+    .ordernow {
+        font-size: 11vh;
+    }
+
+    .catchy1 {
+        font-size: 8.5vh;
+    }
+
+    .bigpic {
+        min-width: 335px;
+        min-height: 345px;
+    }
+
+    .bighead {
+        font-size: 6vh;
+    }
+
+    .catchy {
+        font-size: 5.7vh;
+    }
+}
+
+@media only screen and (max-width:990px) {
+    .items a {
+        font-size: 2.1vh;
+    }
+
+    .buttonbox button {
+        width: 10vw;
+        height: 5vh;
+        font-size: 2vh;
+    }
+
+    .bighead {
+        font-size: 5.7vh;
+    }
+
+    .catchy {
+        font-size: 5.3vh;
+    }
+}
+
+@media only screen and (max-width:973px) {
+    .after-main1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .catchy1 {
+        margin-top: 14vh;
+        width: 70vw;
+    }
+
+    .catchy2 {
+        margin-top: 14vh;
+        margin-bottom: 13vh;
+        width: 65vw;
+    }
+
+    .catchy3 {
+        margin-top: 14vh;
+        margin-bottom: 13vh;
+        width: 54vw;
+    }
+
+    .after-main2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .after-main3 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .for-color {
+        height: 275vh;
+    }
+}
+
+@media only screen and (max-width:946px) {
+    .items a {
+        font-size: 1.9vh;
+    }
+
+    .main-display-left p {
+        font-size: 3.8vh;
+        line-height: 8vh;
+    }
+
+    .ordernow {
+        font-size: 9vh;
+    }
+
+    .main-display {
+        height: 58vh;
+    }
+
+    .catchy1 {
+        width: 73vw;
+    }
+}
+
+@media only screen and (max-width:890px) {
+    .items a {
+        display: none;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .hamburg {
+        display: inline-block;
+    }
+
+    .catchy1 {
+        font-size: 8vh;
+
+    }
+
+    .buttonbox button {
+        font-size: 1.7vh;
+    }
+
+    .catchy2 {
+        width: 68vw;
+    }
+
+    .catchy {
+        font-size: 5vh;
+    }
+}
+
+@media only screen and (max-width:836px) {
+
+    .catchy2 {
+        width: 72vw;
+    }
+
+
+}
+
+@media only screen and (max-width:813px) {
+    .catchy1 {
+        font-size: 7.6vh;
+    }
+
+    .catchy {
+        font-size: 4.8vh;
+    }
+}
+
+@media only screen and (max-width:798px) {
+    .main-display-left p {
+        font-size: 3.5vh;
+    }
+
+    .ordernow {
+        font-size: 8vh;
+    }
+
+    .buttonbox button {
+        font-size: 1.6vh;
+    }
+
+    .catchy2 {
+        font-size: 7.6vh;
+        width: 62vw;
+        line-height: 11vh;
+    }
+
+    .ticklogo {
+        min-width: 260px;
+        max-height: 258px;
+    }
+
+    .catchy1 {
+        font-size: 7vh;
+    }
+
+    .bigpic {
+        min-width: 300px;
+        min-height: 310px;
+    }
+
+    .catchy3 {
+        font-size: 7.4vh;
+    }
+
+    .fastfood {
+        width: 280px;
+        height: 310px;
+    }
+
+    .catchy {
+        font-size: 4.5vh;
+    }
+
+    .bighead {
+        font-size: 4.8vh;
+    }
+}
+
+@media only screen and (max-width:712px) {
+    .main-display-right {
+        display: none;
+    }
+
+    .main-display {
+        justify-content: center;
+    }
+
+    .buttonbox button {
+        width: 72.2px;
+        height: 34.15px;
+    }
+
+    .main-display-left {
+        width: 55vw;
+    }
+
+    .catchy1 {
+        width: 75vw;
+    }
+}
+
+@media only screen and (max-width:693px) {
+    .catchy1 {
+        font-size: 6.2vh;
+
+    }
+
+    .bigpic {
+        min-width: 270px;
+        min-height: 280px;
+    }
+
+    .bighead {
+        font-size: 4.5vh;
+    }
+}
+
+@media only screen and (max-width:670px) {
+    .buttonbox button {
+        margin-right: 10px;
+        font-size: 1.4vh;
+        min-width: 72.2px;
+        min-height: 34.15px
+    }
+
+}
+
+@media only screen and (max-width:614px) {
+    .catchy1 {
+        font-size: 5.5vh;
+        line-height: 8vh;
+
+    }
+
+    .catchy2 {
+        font-size: 5.5vh;
+    }
+
+    .bigpic {
+        min-width: 230px;
+        min-height: 240px;
+    }
+
+    .catchy3 {
+        font-size: 5.5vh;
+    }
+
+    .fastfood {
+        width: 250px;
+        height: 280px;
+    }
+
+    .catchy {
+        font-size: 4.3vh;
+        line-height: 8vh;
+    }
+
+    .ticklogo {
+        min-width: 190px;
+        max-height: 247px;
+    }
+}
+
+@media only screen and (max-width:614px) {
+    .ticklogo {
+        min-width: 249px;
+        min-height: 180px;
+    }
+
+    .bighead {
+        font-size: 4.1vh;
+    }
+}
+
+
+@media only screen and (max-width:592px) {
+    .main-display-left {
+        width: 100vw;
+    }
+
+    .hamburg {
+        left: 92vw
+    }
+
+    .hamburg div {
+        min-width: 20px;
+    }
+
+    .bighead {
+        line-height: 7vh;
+    }
+}
+
+@media only screen and (max-width:990px) {}
+
+@media only screen and (max-width:990px) {}
