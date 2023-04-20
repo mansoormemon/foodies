@@ -38,7 +38,8 @@
     margin-bottom: 6vh;
     width: 50vw;
     font-size: 12vh;
-    font-family: 'Dancing Script', cursive;
+    /* font-family: 'Dancing Script', cursive; */
+    font-family: 'Anuphan', sans-serif;
     color: #ff7575;
 }
 
@@ -47,12 +48,13 @@
     margin-bottom: 6vh;
     width: 50vw;
     font-size: 12vh;
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Roboto', sans-serif;
+    font-family:'Anuphan',sans-serif;
     color: #30a630;
 }
 
 .ticklogo {
-    background-image: url(../../../ticklogo.jpg);
+    background-image: url(../res/images/ticklogo.jpg);
     background-size: cover;
     width: 27vw;
     height: 56vh;
@@ -124,7 +126,7 @@
 }
 
 .picbox {
-    background-image: url(../../../template.jpg);
+    background-image: url(../res/images/template.jpg);
     background-size: cover;
     width: 30vw;
     height: 42vh;
@@ -135,7 +137,7 @@
 }
 
 .fastfood {
-    background-image: url(../../../burger24.jpg);
+    background-image: url(../res/images/burger24.jpg);
     width: 31vw;
     height: 64vh;
     background-size: cover;
@@ -143,7 +145,8 @@
 }
 
 .catchy3 {
-    font-family: 'Dancing Script', cursive;
+    /* font-family: 'Dancing Script', cursive; */
+    font-family: 'Anuphan', sans-serif;
     font-size: 12vh;
     color: #595959;
 }
@@ -166,7 +169,7 @@
 }
 
 .bigpic {
-    background-image: url(../../../burger23.jpg);
+    background-image: url(../res/images/burger23.jpg);
     background-size: cover;
     min-width: 470px;
     min-height: 480px;
@@ -213,7 +216,7 @@
     font-size: 4vh;
 }
 
-.bgbox1 {
+/* .bgbox1 {
     height: 18vh;
     width: 12vw;
     border: 2px solid black;
@@ -301,17 +304,17 @@
     height: 18vh;
     width: 12vw;
     border: 2px solid black;
-}
+} */
 
 .bonus1 {
-    background-image: url(../../../bonus.jpg);
+    background-image: url(../res/images/bonus.jpg);
     background-size: cover;
     width: 25vw;
     height: 48vh;
 }
 
 .bonus2 {
-    background-image: url(../../../wallet.jpg);
+    background-image: url(../res/images/wallet.jpg);
     background-size: cover;
     width: 26vw;
     height: 48vh;
@@ -336,7 +339,7 @@
 }
 
 .coin {
-    background-image: url(../../../coin.jpg);
+    background-image: url(../res/images/coin.jpg);
     background-size: cover;
     width: 26vw;
     height: 47vh;
@@ -360,7 +363,7 @@
 }
 
 .man {
-    background-image: url(../../../happyman1.jpg);
+    background-image: url(../res/images/happyman1.jpg);
     background-size: cover;
     width: 52vw;
     height: 123vh;
@@ -386,7 +389,7 @@
 }
 
 .arrow1 {
-    background-image: url(../../../arrow.jpg);
+    background-image: url(../res/images/arrow.jpg);
     background-size: cover;
     width: 26vw;
     height: 36vh;
@@ -398,7 +401,7 @@
 }
 
 .arrow2 {
-    background-image: url(../../../arrow.jpg);
+    background-image: url(../res/images/arrow.jpg);
     background-size: cover;
     width: 26vw;
     height: 36vh;
@@ -409,7 +412,7 @@
 }
 
 .arrow3 {
-    background-image: url(../../../arrow.jpg);
+    background-image: url(../res/images/arrow.jpg);
     background-size: cover;
     width: 26vw;
     height: 36vh;
@@ -527,12 +530,6 @@ hr {
     cursor: pointer;
 }
 
-.main-display-left button:hover {
-    width: 14vw;
-    height: 8vh;
-    margin-right: 1vw;
-    margin-left: 1vw;
-}
 
 @media only screen and (max-width:1575px) {
     .main-display-left p {
