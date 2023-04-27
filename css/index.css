@@ -5,10 +5,32 @@ section {
 .navbar {
     background-image: linear-gradient(rgb(250, 199, 209), rgb(249, 192, 201), rgb(260, 200, 215), rgb(270, 205, 230));
 }
-.m1{
-    font-family:'Inter',sans-serif;
-    
+
+.m1 {
+    font-family: 'Inter', sans-serif;
+
 }
-.form-inline{
-    margin-left:27vw;
+
+.form-inline {
+    margin-left: 27vw;
+}
+
+.carousel {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom:8vh;
+}
+.carousel-inner{
+    width:62vw;
+}
+.carousel-control-prev{
+    display:none;
+}
+.carousel-control-next{
+    display:none;
+}
+.logo{
+    width:40px;
 }
