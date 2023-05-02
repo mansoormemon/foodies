@@ -74,6 +74,14 @@
                         <a class="nav-link" href="#">Trending</a>
                     </li>
                 </ul>
+                <ul class="navbar-nav mb-2 mb-lg-0 row gx-1">
+                    <li class="col p-1 container-fluid d-flex">
+                        <a href="www/sign_up.php" class="col btn btn-outline-danger m-1">Sign Up</a>
+                    </li>
+                    <li class="col p-1 container-fluid d-flex"> 
+                        <a href="www/sign_up.php" class="col btn btn-outline-dark m-1">Sign In</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -84,8 +92,8 @@
             <h1 class="jumbotron-heading p-4">The best and fastest food delivery experience</h1>
             <p class="lead p-1"><b>Feeling Starvy?</b></p>
             <div class="p-2">
-                <a href="#" class="btn btn-warning my-2">Order now</a>
-                <a href="#" class="btn btn-outline-dark my-2">Learn more</a>
+                <a href="#" class="btn btn-warning my-2 mx-1">Order now</a>
+                <a href="#" class="btn btn-outline-dark my-2 mx-1">Learn more</a>
             </div>
             <div class="container-sm p-3">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

@@ -78,7 +78,7 @@
                             <div>
                                 <p class="text-center">
                                     <small>
-                                        Don't have an account? <a href="sign_up.html">Sign Up</a>
+                                        Don't have an account? <a href="sign_up.php">Sign Up</a>
                                     </small>
                                 </p>
                             </div>
