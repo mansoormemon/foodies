@@ -39,7 +39,6 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@600&family=Dancing+Script:wght@700&family=Lato&family=Manrope:wght@800&family=Raleway&family=Roboto+Condensed:wght@700&family=Roboto:wght@700;900&family=Signika:wght@600&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@500&family=Heebo&family=Josefin+Sans:wght@700&display=swap');
-
     </style>
 </head>
 
@@ -100,12 +99,68 @@
                 <a href="#" class="btn btn-outline-dark my-2 mx-1">Learn more</a>
             </div>
             <div class="container-sm p-3">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control me-2" type="search" data-bs-toggle="modal" data-bs-target="#signUpTermsDialog"placeholder="Search" aria-label="Search">
             </div>
         </div>
     </section>
 
     <br>
+
+
+    <!-- Modal -->
+
+    <div class="modal fade" id="signUpTermsDialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="signUpTermsDialogLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="widt">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <form class="d-flex px-2 py-3" style="width:100%;" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+
+                    </form>
+
+                </div>
+                <div class="modal-body">
+                    <h1>This is ourproject relating to the creation of a food delivery website where we provide a safe
+                        platform for food cravers to interact and satisfy their cravings.</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam ratione sed consequuntur ea ut
+                        cum commodi adipisci omnis! Quos vero aspernatur reprehenderit assumenda iste qui deleniti nemo
+                        voluptatem aliquid possimus.</p>
+                    <h1>This is ourproject relating to the creation of a food delivery website where we provide a safe
+                        platform for food cravers to interact and satisfy their cravings.</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam ratione sed consequuntur ea ut
+                        cum commodi adipisci omnis! Quos vero aspernatur reprehenderit assumenda iste qui deleniti nemo
+                        voluptatem aliquid possimus.</p>
+                    <h1>This is ourproject relating to the creation of a food delivery website where we provide a safe
+                        platform for food cravers to interact and satisfy their cravings.</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam ratione sed consequuntur ea ut
+                        cum commodi adipisci omnis! Quos vero aspernatur reprehenderit assumenda iste qui deleniti nemo
+                        voluptatem aliquid possimus.</p>
+                    <h1>This is ourproject relating to the creation of a food delivery website where we provide a safe
+                        platform for food cravers to interact and satisfy their cravings.</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam ratione sed consequuntur ea ut
+                        cum commodi adipisci omnis! Quos vero aspernatur reprehenderit assumenda iste qui deleniti nemo
+                        voluptatem aliquid possimus.</p>
+                    <h1>This is ourproject relating to the creation of a food delivery website where we provide a safe
+                        platform for food cravers to interact and satisfy their cravings.</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam ratione sed consequuntur ea ut
+                        cum commodi adipisci omnis! Quos vero aspernatur reprehenderit assumenda iste qui deleniti nemo
+                        voluptatem aliquid possimus.</p>
+                    <h1>This is ourproject relating to the creation of a food delivery website where we provide a safe
+                        platform for food cravers to interact and satisfy their cravings.</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam ratione sed consequuntur ea ut
+                        cum commodi adipisci omnis! Quos vero aspernatur reprehenderit assumenda iste qui deleniti nemo
+                        voluptatem aliquid possimus.</p>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Carousel -->
     <div class="container-sm px-5">
