@@ -1,4 +1,5 @@
 <?php
-    
-    header("Location: /Foodies.com/foodies/index.php");
+
+    header("Location: ../index.php");
+
 ?>

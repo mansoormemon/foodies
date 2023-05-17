@@ -15,17 +15,17 @@
         $hashedPassword = $row['PASSWORD'];
 
         if (password_verify("$password", $hashedPassword)) {
-            header("Location: /Foodies.com/foodies/www/session.php");
+            header("Location: session.php");
             exit;
         }
 
         else {
-            header("Location: /Foodies.com/foodies/www/sign_in.php?error=invalid_credientials");
+            header("Location: sign_in.php?error=invalid_credientials");
             exit;
         }
     }
 
-    header("Location: /Foodies.com/foodies/www/sign_in.php?error=username_not_found");
+    header("Location: sign_in.php?error=username_not_found");
     exit;
 
     mysqli_close($conn);
