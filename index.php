@@ -16,8 +16,9 @@
 
     <!-- Popper JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-        crossorigin="anonymous"></script>
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 
     <!-- Bootstrap v6 (JS) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js"
@@ -30,6 +31,9 @@
 
     <!-- Font Awesome v6.3 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Option 1: Include in HTML -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
     <link rel="stylesheet" href="css/index.css">
     <style>
@@ -95,7 +99,8 @@
                 <a href="#" class="btn btn-outline-dark my-2 mx-1">Learn more</a>
             </div>
             <div class="container-sm p-3">
-                <input class="form-control me-2" type="search" data-bs-toggle="modal" data-bs-target="#signUpTermsDialog"placeholder="Search" aria-label="Search">
+                <input class="form-control me-2" type="search" data-bs-toggle="modal"
+                    data-bs-target="#signUpTermsDialog" placeholder="Search" aria-label="Search">
             </div>
         </div>
     </section>
@@ -111,46 +116,28 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <form class="d-flex px-2 py-3" style="width:100%;" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-
+                        <input class="form-control me-2 i1" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success">Search</button>
                     </form>
+                    <i style="font-size:3vh;" class="bi bi-filter"></i>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Filter By
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Restaurants</a>
+                            <a class="dropdown-item" href="#">Food Items</a>
+                            <a class="dropdown-item" href="#">Trending</a>
+                        </div>
+                    </div>
 
                 </div>
                 <div class="modal-body">
-                    <h1>This is ourproject relating to the creation of a food delivery website where we provide a safe
-                        platform for food cravers to interact and satisfy their cravings.</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam ratione sed consequuntur ea ut
-                        cum commodi adipisci omnis! Quos vero aspernatur reprehenderit assumenda iste qui deleniti nemo
-                        voluptatem aliquid possimus.</p>
-                    <h1>This is ourproject relating to the creation of a food delivery website where we provide a safe
-                        platform for food cravers to interact and satisfy their cravings.</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam ratione sed consequuntur ea ut
-                        cum commodi adipisci omnis! Quos vero aspernatur reprehenderit assumenda iste qui deleniti nemo
-                        voluptatem aliquid possimus.</p>
-                    <h1>This is ourproject relating to the creation of a food delivery website where we provide a safe
-                        platform for food cravers to interact and satisfy their cravings.</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam ratione sed consequuntur ea ut
-                        cum commodi adipisci omnis! Quos vero aspernatur reprehenderit assumenda iste qui deleniti nemo
-                        voluptatem aliquid possimus.</p>
-                    <h1>This is ourproject relating to the creation of a food delivery website where we provide a safe
-                        platform for food cravers to interact and satisfy their cravings.</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam ratione sed consequuntur ea ut
-                        cum commodi adipisci omnis! Quos vero aspernatur reprehenderit assumenda iste qui deleniti nemo
-                        voluptatem aliquid possimus.</p>
-                    <h1>This is ourproject relating to the creation of a food delivery website where we provide a safe
-                        platform for food cravers to interact and satisfy their cravings.</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam ratione sed consequuntur ea ut
-                        cum commodi adipisci omnis! Quos vero aspernatur reprehenderit assumenda iste qui deleniti nemo
-                        voluptatem aliquid possimus.</p>
-                    <h1>This is ourproject relating to the creation of a food delivery website where we provide a safe
-                        platform for food cravers to interact and satisfy their cravings.</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam ratione sed consequuntur ea ut
-                        cum commodi adipisci omnis! Quos vero aspernatur reprehenderit assumenda iste qui deleniti nemo
-                        voluptatem aliquid possimus.</p>
 
 
                 </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
@@ -327,6 +314,8 @@
     <div class="container-fluid p-3 text-center">
         <span class="text-muted"><small>Copyright © 2023</small></span>
     </div>
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>
