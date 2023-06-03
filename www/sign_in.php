@@ -50,15 +50,16 @@
                             <img src="../res/images/logo.png" class="img-fluid" width="280vw">
                         </div>
                         <h1 class="display-6 text-warning text-center">Sign in to your account</h1>
-                        <form class="p-5">
+                        
+                        <form class="p-5" novalidate action=sign_in_inc.php method="post">
                             <div class="mb-3">
-                                <label for="signUpUsername" class="form-label">Username:</label>
-                                <input type="email" class="form-control" id="signUpUsername" height="32px" autofocus>
+                                <label for="signInUsername" class="form-label">Username:</label>
+                                <input type="email" class="form-control" name="signInUsername" id="signInUsername" name=height="32px" autofocus>
                             </div>
 
                             <div class="mb-3">
-                                <label for="signUpPassword" class="form-label">Password:</label>
-                                <input type="password" class="form-control" id="signUpPassword" height="32px">
+                                <label for="signInPassword" class="form-label">Password:</label>
+                                <input type="password" class="form-control" name="signInPassword" id="signInPassword" height="32px">
                             </div>
 
                             <div class="mb-3">
@@ -70,7 +71,7 @@
                             <br> <br>
 
                             <div class="d-grid gap-2">
-                                <button class="btn btn-warning" type="button" id="signUpSubmit">Submit</button>
+                                <button class="btn btn-warning" type="submit" id="signInSubmit">Submit</button>
                             </div>
                             
                             <br>

@@ -1,3 +1,7 @@
+<?php
+    $_SESSION['username']='haroon';
+    echo $_SESSION['username'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -81,8 +85,8 @@
                     <li class="col p-1 container-fluid d-flex">
                         <a href="www/sign_up.php" class="col btn btn-outline-danger m-1">Sign Up</a>
                     </li>
-                    <li class="col p-1 container-fluid d-flex">
-                        <a href="www/sign_up.php" class="col btn btn-outline-dark m-1">Sign In</a>
+                    <li class="col p-1 container-fluid d-flex"> 
+                        <a href="www/sign_in.php" class="col btn btn-outline-dark m-1">Sign In</a>
                     </li>
                 </ul>
             </div>
