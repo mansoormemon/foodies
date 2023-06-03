@@ -39,6 +39,23 @@
     <script src="../js/script.js"></script>
 </head>
 
+<?php 
+    $is_err = isset($_GET["e"]);
+    if ($is_err) {
+        $err_code = $_GET["e"];
+        
+        if ($err_code == 0) {
+            $err_msg = "Invalid credentials"; 
+        } else if ($err_code == 1) {
+            $err_msg = "User doesn't exist";
+        }
+?>
+    <div class="alert alert-danger" role="alert">
+        Error: <?php echo $err_msg; ?>
+    </div>
+<?php
+    }
+?>
 
 <body>
     <div class="container m-auto p-5 d-flex align-items-center justify-content-center">
@@ -51,10 +68,10 @@
                         </div>
                         <h1 class="display-6 text-warning text-center">Sign in to your account</h1>
                         
-                        <form class="p-5" novalidate action=sign_in_inc.php method="post">
+                        <form class="p-5" novalidate action="sign_in_inc.php" method="post">
                             <div class="mb-3">
-                                <label for="signInUsername" class="form-label">Username:</label>
-                                <input type="email" class="form-control" name="signInUsername" id="signInUsername" name=height="32px" autofocus>
+                                <label for="signInEmail" class="form-label">Email:</label>
+                                <input type="email" class="form-control" name="signInEmail" id="signInEmail" name=height="32px" autofocus>
                             </div>
 
                             <div class="mb-3">
