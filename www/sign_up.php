@@ -39,6 +39,21 @@
     <script src="../js/script.js"></script>
 </head>
 
+<?php 
+    $is_err = isset($_GET["e"]);
+    if ($is_err) {
+        $err_code = $_GET["e"];
+        
+        if ($err_code == 0) {
+            $err_msg = "Account already exists"; 
+        }
+?>
+    <div class="alert alert-danger" role="alert">
+        Error: <?php echo $err_msg; ?>
+    </div>
+<?php
+    }
+?>
 
 <body>
     <div class="container m-auto p-5 d-flex align-items-center justify-content-center">
