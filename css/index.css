@@ -20,3 +20,23 @@ section {
 .modal {
     --bs-modal-width: 80%;
 }
+
+.cart {
+    background-image: linear-gradient(#FAC7D1, #F9C0C9, #F6C4C3);
+}
+
+.img-fluid {
+    height: 64vh;
+}
+
+.cart-btn {
+    width: 10rem;
+    border-radius: 8px;
+    height: 3rem;
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+    letter-spacing: 1px;
+    background-color: #ffa1b2;
+    position: relative;
+    right: 1.5vw;
+}
