@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-<?php
-$_SESSION['username'] = 'haroon';
-echo $_SESSION['username'];
-=======
 <?php 
     session_start();
->>>>>>> aa6a34b20604171ffc460cfec8e84230e75bfd5f
 ?>
 
 <!DOCTYPE html>
@@ -52,10 +46,6 @@ echo $_SESSION['username'];
     </style>
 </head>
 
-<<<<<<< HEAD
-
-
-=======
 <?php
     include "www/dbh.php";
 
@@ -69,7 +59,6 @@ echo $_SESSION['username'];
     }
 ?>
     
->>>>>>> aa6a34b20604171ffc460cfec8e84230e75bfd5f
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -109,14 +98,6 @@ echo $_SESSION['username'];
                 </ul>
 
                 <ul class="navbar-nav mb-2 mb-lg-0 row gx-1">
-<<<<<<< HEAD
-                    <li class="col p-1 container-fluid d-flex">
-                        <a href="www/sign_up.php" style="width:6rem;" class="col btn btn-outline-danger m-1">Sign Up</a>
-                    </li>
-                    <li class="col p-1 container-fluid d-flex">
-                        <a href="www/sign_in.php" style="width:6rem;" class="col btn btn-outline-dark m-1">Sign In</a>
-                    </li>
-=======
                     <?php 
                         if ($is_logged_in) {
                     ?>
@@ -136,7 +117,6 @@ echo $_SESSION['username'];
                     <?php 
                         }
                     ?>
->>>>>>> aa6a34b20604171ffc460cfec8e84230e75bfd5f
                 </ul>
             </div>
         </div>
