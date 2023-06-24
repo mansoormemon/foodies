@@ -1,10 +1,15 @@
+<<<<<<< HEAD
 <?php
 $_SESSION['username'] = 'haroon';
 echo $_SESSION['username'];
+=======
+<?php 
+    session_start();
+>>>>>>> aa6a34b20604171ffc460cfec8e84230e75bfd5f
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,8 +52,24 @@ echo $_SESSION['username'];
     </style>
 </head>
 
+<<<<<<< HEAD
 
 
+=======
+<?php
+    include "www/dbh.php";
+
+    $is_logged_in = isset($_SESSION["CUSTOMER_ID"]);
+
+    if ($is_logged_in) {
+        $cust_id = $_SESSION['CUSTOMER_ID'];
+        $sql = "SELECT * FROM customer where CUSTOMER_ID = $cust_id;";
+        $result = mysqli_query($conn, $sql);
+        $record = mysqli_fetch_assoc($result);
+    }
+?>
+    
+>>>>>>> aa6a34b20604171ffc460cfec8e84230e75bfd5f
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -86,13 +107,36 @@ echo $_SESSION['username'];
                         <a class="nav-link" href="#">Trending</a>
                     </li>
                 </ul>
+
                 <ul class="navbar-nav mb-2 mb-lg-0 row gx-1">
+<<<<<<< HEAD
                     <li class="col p-1 container-fluid d-flex">
                         <a href="www/sign_up.php" style="width:6rem;" class="col btn btn-outline-danger m-1">Sign Up</a>
                     </li>
                     <li class="col p-1 container-fluid d-flex">
                         <a href="www/sign_in.php" style="width:6rem;" class="col btn btn-outline-dark m-1">Sign In</a>
                     </li>
+=======
+                    <?php 
+                        if ($is_logged_in) {
+                    ?>
+                        <form class="input-group" action="www/logout.php">
+                            <label type="text" class="form-control"><?php echo $record["EMAIL"]; ?></label>
+                            <input class="input-group-text btn btn-success" type="submit" value="Log Out">
+                        </form>
+                    <?php 
+                        } else {
+                    ?>
+                        <li class="col p-1 container-fluid d-flex">
+                            <a href="www/sign_up.php" class="col btn btn-outline-danger m-1" style="min-width: 96px;">Sign Up</a>
+                        </li>
+                        <li class="col p-1 container-fluid d-flex"> 
+                            <a href="www/sign_in.php" class="col btn btn-outline-dark m-1" style="min-width: 96px;">Sign In</a>
+                        </li>
+                    <?php 
+                        }
+                    ?>
+>>>>>>> aa6a34b20604171ffc460cfec8e84230e75bfd5f
                 </ul>
             </div>
         </div>
@@ -115,7 +159,6 @@ echo $_SESSION['username'];
     </section>
 
     <br>
-
 
     <!-- Modal -->
 

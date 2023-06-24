@@ -76,7 +76,7 @@ echo $_SESSION['username'];
                     </li>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Cart</a>
+                        <a class="nav-link" href="cart.php">Cart</a>
                     </li>
                     </li>
                     <li class="nav-item">
@@ -96,7 +96,7 @@ echo $_SESSION['username'];
     </nav>
 
     <!-- Jumbotron section -->
-    <section class="jumbotron text-center">
+    <section class="j5 jumbotron text-center">
         <div class="container-fluid p-4">
             <h1 class="jumbotron-heading p-4">The best and fastest food delivery experience</h1>
             <p class="lead p-1"><b>Feeling Starvy?</b></p>
@@ -244,7 +244,7 @@ echo $_SESSION['username'];
                             crispy zinger chicken patty with fresh toppings."</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <button type="button" data-bs-toggle="modal" data-bs-target=""
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#ItemDescription"
                                     class="btn btn-sm btn-outline-danger">Add to cart</button>
                                 <button type="button" data-bs-toggle="modal" data-bs-target="#ItemDescription"
                                     class="btn btn-sm btn-outline-danger">View details</button>
