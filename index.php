@@ -144,39 +144,21 @@
 
     <div class="modal fade" id="signUpTermsDialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="signUpTermsDialogLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="widt">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <form class="d-flex px-2 py-3" style="width:100%;" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success">Search</button>
-                    </form>
-                    <i style="font-size:3vh;" class="bi bi-filter"></i>
+                    <input class="form-control me-2" type="search" id="indexPageFilter" placeholder="Search" aria-label="Search" oninput="handleSearch()" autocomplete="false">
+                    <i style="font-size: 3vh; padding-right: 4px;" class="bi bi-filter"></i>
 
-                    <select name="dog-names" id="filter">
-                        <option value="rigatoni">Restaurants</option>
-                        <option value="dave">Food items</option>
-                        <option value="pumpernickel">Trending</option>
-                        <option value="reeses">Nearby</option>
+                    <select class="dropdown" id="filterBasedOn" onchange="handleSearch()">
+                        <option value="restaurants">Restaurants</option>
+                        <option value="food_items" selected>Food items</option>
+                        <option value="price">Price</option>
                     </select>
-
-                    <!-- <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Filter By
-                        </button>
-
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Restaurants</a>
-                            <a class="dropdown-item" href="#">Food Items</a>
-                            <a class="dropdown-item" href="#">Trending</a>
-                        </div>
-                    </div> -->
-
                 </div>
                 <div class="modal-body">
-
-
+                    <div id="matches"></div>
+                    <p id="filterDump"></p>
                 </div>
 
                 <div class="modal-footer">
@@ -341,7 +323,7 @@
             <div class="card-body">
                 <h5 class="card-title">Contact Us</h5>
                 <p class="card-text">+92 3343174037</p>
-                <a href=".." class="btn btn-primary">Contact Us</a>
+                <a class="btn btn-primary">Contact Us</a>
             </div>
         </div>
     </div>
