@@ -135,10 +135,6 @@
             </div>
           </div>
         </div>
-      <?php
-      }
-      mysqli_close($conn);
-      ?>
     </div>
   </div>
 </div>
