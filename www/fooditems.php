@@ -1,7 +1,3 @@
-<?php
-$_SESSION['username'] = 'haroon';
-echo $_SESSION['username'];
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -109,334 +105,45 @@ echo $_SESSION['username'];
 
 
 
-    <!-- //Food item Section -->
-
-    <!-- Restaurant Section -->
-
     <div class="parent container-fluid section mt-5">
-        <h1 class="text-center">Savory comfort foods that satisfy your tastebuds.</h1>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="card mt-5" style="width: 18rem;margin-left:8rem;">
-                    <img src="../res/images/sign_up_cover.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Food Item</h5>
-                        <p class="card-text">"Irresistibly flavorful and spicy, the Zinger Mighty Burger combines a
-                            crispy zinger chicken patty with fresh toppings."</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" onclick="CartAdd()" data-bs-toggle="modal"
-                                    data-bs-target="#Cartlist" class="btn btn-sm btn-outline-danger">Add to
-                                    cart</button>
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#ItemDescription"
-                                    class="btn btn-sm btn-outline-danger">View details</button>
-                            </div>
-                            <small class="text-muted">$10.99</small>
+  <h1 class="text-center">Savory comfort foods that satisfy your tastebuds.</h1>
+  <div class="container-fluid">
+    <div class="row">
+      <?php
+      include 'dbh.php';
+      $query = "SELECT COUNT(*) as total_rows FROM fooditem";
+      $result = mysqli_query($conn, $query);
+      $row = mysqli_fetch_assoc($result);
+      $totalRows = $row['total_rows'];
 
-                        </div>
-                    </div>
-                </div>
-                <div class="card ms-5 mt-5" style="width: 18rem;">
-                    <img src="../res/images/sign_up_cover.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Food Item</h5>
-                        <p class="card-text">"Irresistibly flavorful and spicy, the Zinger Mighty Burger combines a
-                            crispy zinger chicken patty with fresh toppings."</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" onclick="CartAdd()" data-bs-toggle="modal"
-                                    data-bs-target="#Cartlist" class="btn btn-sm btn-outline-danger">Add to
-                                    cart</button>
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#ItemDescription"
-                                    class="btn btn-sm btn-outline-danger">View details</button>
-                            </div>
-                            <small class="text-muted">$7.99</small>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="card ms-5 mt-5" style="width: 18rem;">
-                    <img src="../res/images/sign_up_cover.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Food Item</h5>
-                        <p class="card-text">"Irresistibly flavorful and spicy, the Zinger Mighty Burger combines a
-                            crispy zinger chicken patty with fresh toppings."</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" onclick="CartAdd()" data-bs-toggle="modal"
-                                    data-bs-target="#Cartlist" class="btn btn-sm btn-outline-danger">Add to
-                                    cart</button>
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#ItemDescription"
-                                    class="btn btn-sm btn-outline-danger">View details</button>
-                            </div>
-                            <small class="text-muted">$7.99</small>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="card ms-5 mt-5" style="width: 18rem;">
-                    <img src="../res/images/sign_up_cover.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Food Item</h5>
-                        <p class="card-text">"Irresistibly flavorful and spicy, the Zinger Mighty Burger combines a
-                            crispy zinger chicken patty with fresh toppings."</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" onclick="CartAdd()" data-bs-toggle="modal"
-                                    data-bs-target="#Cartlist" class="btn btn-sm btn-outline-danger">Add to
-                                    cart</button>
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#ItemDescription"
-                                    class="btn btn-sm btn-outline-danger">View details</button>
-                            </div>
-                            <small class="text-muted">$7.99</small>
-
-                        </div>
-                    </div>
-                </div>
+      for ($i = 0; $i < $totalRows; $i++) {
+        $cardQuery = "SELECT * FROM fooditem LIMIT $i, 1";
+        $cardResult = mysqli_query($conn, $cardQuery);
+        $cardRow = mysqli_fetch_assoc($cardResult);
+      ?>
+        <div class="card ms-5 mt-5" style="width: 18rem;">
+          <img src="../res/images/sign_up_cover.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><?php echo $cardRow['NAME']; ?></h5>
+            <p class="card-text"><?php echo $cardRow['DESCRIPTION']; ?></p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" onclick="CartAdd()" data-bs-toggle="modal" data-bs-target="#Cartlist" class="btn btn-sm btn-outline-danger">Add to cart</button>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#ItemDescription" class="btn btn-sm btn-outline-danger">View details</button>
+              </div>
+              <small class="text-muted"><?php echo $cardRow['PRICE']; ?></small>
             </div>
-
-
-
-            <div class="row">
-                <div class="card mt-5" style="width: 18rem;margin-left:8rem;">
-                    <img src="../res/images/sign_up_cover.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Food Item</h5>
-                        <p class="card-text">"Irresistibly flavorful and spicy, the Zinger Mighty Burger combines a
-                            crispy zinger chicken patty with fresh toppings."</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" onclick="CartAdd()" data-bs-toggle="modal"
-                                    data-bs-target="#Cartlist" class="btn btn-sm btn-outline-danger">Add to
-                                    cart</button>
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#ItemDescription"
-                                    class="btn btn-sm btn-outline-danger">View details</button>
-                            </div>
-                            <small class="text-muted">$7.99</small>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="card ms-5 mt-5" style="width: 18rem;">
-                    <img src="../res/images/sign_up_cover.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Food Item</h5>
-                        <p class="card-text">"Irresistibly flavorful and spicy, the Zinger Mighty Burger combines a
-                            crispy zinger chicken patty with fresh toppings."</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" onclick="CartAdd()" data-bs-toggle="modal"
-                                    data-bs-target="#Cartlist" class="btn btn-sm btn-outline-danger">Add to
-                                    cart</button>
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#ItemDescription"
-                                    class="btn btn-sm btn-outline-danger">View details</button>
-                            </div>
-                            <small class="text-muted">$7.99</small>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="card ms-5 mt-5" style="width: 18rem;">
-                    <img src="../res/images/sign_up_cover.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Food Item</h5>
-                        <p class="card-text">"Irresistibly flavorful and spicy, the Zinger Mighty Burger combines a
-                            crispy zinger chicken patty with fresh toppings."</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#ItemDescription"
-                                    class="btn btn-sm btn-outline-danger">Add to cart</button>
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#ItemDescription"
-                                    class="btn btn-sm btn-outline-danger">View details</button>
-                            </div>
-                            <small class="text-muted">$7.99</small>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="card ms-5 mt-5" style="width: 18rem;">
-                    <img src="../res/images/sign_up_cover.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Food Item</h5>
-                        <p class="card-text">"Irresistibly flavorful and spicy, the Zinger Mighty Burger combines a
-                            crispy zinger chicken patty with fresh toppings."</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" onclick="CartAdd()" data-bs-toggle="modal"
-                                    data-bs-target="#Cartlist" class="btn btn-sm btn-outline-danger">Add to
-                                    cart</button>
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#ItemDescription"
-                                    class="btn btn-sm btn-outline-danger">View details</button>
-                            </div>
-                            <small class="text-muted">$7.99</small>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="card mt-5" style="width: 18rem;margin-left:8rem;">
-                    <img src="../res/images/sign_up_cover.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Food Item</h5>
-                        <p class="card-text">"Irresistibly flavorful and spicy, the Zinger Mighty Burger combines a
-                            crispy zinger chicken patty with fresh toppings."</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" onclick="CartAdd()" data-bs-toggle="modal"
-                                    data-bs-target="#Cartlist" class="btn btn-sm btn-outline-danger">Add to
-                                    cart</button>
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#ItemDescription"
-                                    class="btn btn-sm btn-outline-danger">View details</button>
-                            </div>
-                            <small class="text-muted">$10.99</small>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="card ms-5 mt-5" style="width: 18rem;">
-                    <img src="../res/images/sign_up_cover.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Food Item</h5>
-                        <p class="card-text">"Irresistibly flavorful and spicy, the Zinger Mighty Burger combines a
-                            crispy zinger chicken patty with fresh toppings."</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" onclick="CartAdd()" data-bs-toggle="modal"
-                                    data-bs-target="#Cartlist" class="btn btn-sm btn-outline-danger">Add to
-                                    cart</button>
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#ItemDescription"
-                                    class="btn btn-sm btn-outline-danger">View details</button>
-                            </div>
-                            <small class="text-muted">$10.99</small>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="card ms-5 mt-5" style="width: 18rem;">
-                    <img src="../res/images/sign_up_cover.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Food Item</h5>
-                        <p class="card-text">"Irresistibly flavorful and spicy, the Zinger Mighty Burger combines a
-                            crispy zinger chicken patty with fresh toppings."</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" onclick="CartAdd()" data-bs-toggle="modal"
-                                    data-bs-target="#Cartlist" class="btn btn-sm btn-outline-danger">Add to
-                                    cart</button>
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#ItemDescription"
-                                    class="btn btn-sm btn-outline-danger">View details</button>
-                            </div>
-                            <small class="text-muted">$10.99</small>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="card ms-5 mt-5" style="width: 18rem;">
-                    <img src="../res/images/sign_up_cover.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Food Item</h5>
-                        <p class="card-text">"Irresistibly flavorful and spicy, the Zinger Mighty Burger combines a
-                            crispy zinger chicken patty with fresh toppings."</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" onclick="CartAdd()" data-bs-toggle="modal"
-                                    data-bs-target="#Cartlist" class="btn btn-sm btn-outline-danger">Add to
-                                    cart</button>
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#ItemDescription"
-                                    class="btn btn-sm btn-outline-danger">View details</button>
-                            </div>
-                            <small class="text-muted">$10.99</small>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="row">
-                <div class="card mt-5" style="width: 18rem;margin-left:8rem;">
-                    <img src="../res/images/sign_up_cover.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Food Item</h5>
-                        <p class="card-text">"Irresistibly flavorful and spicy, the Zinger Mighty Burger combines a
-                            crispy zinger chicken patty with fresh toppings."</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" onclick="CartAdd()" data-bs-toggle="modal"
-                                    data-bs-target="#Cartlist" class="btn btn-sm btn-outline-danger">Add to
-                                    cart</button>
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#ItemDescription"
-                                    class="btn btn-sm btn-outline-danger">View details</button>
-                            </div>
-                            <small class="text-muted">$10.99</small>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="card ms-5 mt-5" style="width: 18rem;">
-                    <img src="../res/images/sign_up_cover.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Food Item</h5>
-                        <p class="card-text">"Irresistibly flavorful and spicy, the Zinger Mighty Burger combines a
-                            crispy zinger chicken patty with fresh toppings."</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" onclick="CartAdd()" data-bs-toggle="modal"
-                                    data-bs-target="#Cartlist" class="btn btn-sm btn-outline-danger">Add to
-                                    cart</button>
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#ItemDescription"
-                                    class="btn btn-sm btn-outline-danger">View details</button>
-                            </div>
-                            <small class="text-muted">$10.99</small>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="card ms-5 mt-5" style="width: 18rem;">
-                    <img src="../res/images/sign_up_cover.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Food Item</h5>
-                        <p class="card-text">"Irresistibly flavorful and spicy, the Zinger Mighty Burger combines a
-                            crispy zinger chicken patty with fresh toppings."</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" onclick="CartAdd()" data-bs-toggle="modal"
-                                    data-bs-target="#Cartlist" class="btn btn-sm btn-outline-danger">Add to
-                                    cart</button>
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#ItemDescription"
-                                    class="btn btn-sm btn-outline-danger">View details</button>
-                            </div>
-                            <small class="text-muted">$10.99</small>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="card ms-5 mt-5" style="width: 18rem;">
-                    <img src="../res/images/sign_up_cover.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Food Item</h5>
-                        <p class="card-text">"Irresistibly flavorful and spicy, the Zinger Mighty Burger combines a
-                            crispy zinger chicken patty with fresh toppings."</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" onclick="CartAdd()" data-bs-toggle="modal"
-                                    data-bs-target="#Cartlist" class="btn btn-sm btn-outline-danger">Add to
-                                    cart</button>
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#ItemDescription"
-                                    class="btn btn-sm btn-outline-danger">View details</button>
-                            </div>
-                            <small class="text-muted">$10.99</small>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+      <?php
+      }
+      mysqli_close($conn);
+      ?>
     </div>
+  </div>
+</div>
+
+                
 
     <div class="modal fade" id="Cartlist" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="signUpTermsDialogLabel" aria-hidden="true">
