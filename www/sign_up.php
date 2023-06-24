@@ -80,6 +80,7 @@
                                 <input type="email" class="form-control" id="signUpEmail" name="signUpEmail"
                                     height="32px" required autofocus>
                             </div>
+                            
 
                             <!-- Password Field -->
                             <div class="mb-3">

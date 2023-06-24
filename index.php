@@ -1,5 +1,11 @@
+<<<<<<< HEAD
+<?php
+$_SESSION['username'] = 'haroon';
+echo $_SESSION['username'];
+=======
 <?php 
     session_start();
+>>>>>>> aa6a34b20604171ffc460cfec8e84230e75bfd5f
 ?>
 
 <!DOCTYPE html>
@@ -42,9 +48,14 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@600&family=Dancing+Script:wght@700&family=Lato&family=Manrope:wght@800&family=Raleway&family=Roboto+Condensed:wght@700&family=Roboto:wght@700;900&family=Signika:wght@600&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@500&family=Heebo&family=Josefin+Sans:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Heebo&family=Inter:wght@400;700;800&family=Roboto:wght@700&display=swap');
     </style>
 </head>
 
+<<<<<<< HEAD
+
+
+=======
 <?php
     include "www/dbh.php";
 
@@ -58,6 +69,7 @@
     }
 ?>
     
+>>>>>>> aa6a34b20604171ffc460cfec8e84230e75bfd5f
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -75,18 +87,20 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Menu <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="www/restaurant.php">Restaurants <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="www/fooditems.php">Food Items</a>
+                    </li>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Orders</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Deals</a>
-                    </li>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Bonus</a>
+                        <a class="nav-link" href="#">Cart</a>
                     </li>
                     </li>
                     <li class="nav-item">
@@ -95,6 +109,14 @@
                 </ul>
 
                 <ul class="navbar-nav mb-2 mb-lg-0 row gx-1">
+<<<<<<< HEAD
+                    <li class="col p-1 container-fluid d-flex">
+                        <a href="www/sign_up.php" style="width:6rem;" class="col btn btn-outline-danger m-1">Sign Up</a>
+                    </li>
+                    <li class="col p-1 container-fluid d-flex">
+                        <a href="www/sign_in.php" style="width:6rem;" class="col btn btn-outline-dark m-1">Sign In</a>
+                    </li>
+=======
                     <?php 
                         if ($is_logged_in) {
                     ?>
@@ -114,6 +136,7 @@
                     <?php 
                         }
                     ?>
+>>>>>>> aa6a34b20604171ffc460cfec8e84230e75bfd5f
                 </ul>
             </div>
         </div>
@@ -145,21 +168,30 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <form class="d-flex px-2 py-3" style="width:100%;" role="search">
-                        <input class="form-control me-2 i1" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success">Search</button>
                     </form>
                     <i style="font-size:3vh;" class="bi bi-filter"></i>
-                    <div class="dropdown">
+
+                    <select name="dog-names" id="filter">
+                        <option value="rigatoni">Restaurants</option>
+                        <option value="dave">Food items</option>
+                        <option value="pumpernickel">Trending</option>
+                        <option value="reeses">Nearby</option>
+                    </select>
+
+                    <!-- <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Filter By
                         </button>
+
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="#">Restaurants</a>
                             <a class="dropdown-item" href="#">Food Items</a>
                             <a class="dropdown-item" href="#">Trending</a>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
                 <div class="modal-body">
