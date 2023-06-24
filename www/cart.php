@@ -1,7 +1,3 @@
-<?php
-$_SESSION['username'] = 'haroon';
-echo $_SESSION['username'];
-?>
 <!DOCTYPE html>
 <html lang="en">
 
