@@ -12,22 +12,16 @@
     <!------------------------------------------------>
 
     <!-- Bootstrap v6 (CSS) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 
     <!-- Popper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 
     <!-- Bootstrap v6 (JS) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js"
-        integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js" integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i" crossorigin="anonymous"></script>
 
     <!-- JQuery v3.6 -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
-        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 
     <!-- Font Awesome v6.3 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
@@ -39,22 +33,22 @@
     <script src="../js/script.js"></script>
 </head>
 
-<?php 
-    $is_err = isset($_GET["e"]);
-    if ($is_err) {
-        $err_code = $_GET["e"];
-        
-        if ($err_code == 0) {
-            $err_msg = "Invalid credentials"; 
-        } else if ($err_code == 1) {
-            $err_msg = "User doesn't exist";
-        }
+<?php
+$is_err = isset($_GET["e"]);
+if ($is_err) {
+    $err_code = $_GET["e"];
+
+    if ($err_code == 0) {
+        $err_msg = "Invalid credentials";
+    } else if ($err_code == 1) {
+        $err_msg = "User doesn't exist";
+    }
 ?>
     <div class="alert alert-danger" role="alert">
         Error: <?php echo $err_msg; ?>
     </div>
 <?php
-    }
+}
 ?>
 
 <body>
@@ -67,7 +61,7 @@
                             <img src="../res/images/logo.png" class="img-fluid" width="280vw">
                         </div>
                         <h1 class="display-6 text-warning text-center">Sign in to your account</h1>
-                        
+
                         <form class="p-5" novalidate action="sign_in_inc.php" method="post">
                             <div class="mb-3">
                                 <label for="signInEmail" class="form-label">Email:</label>
@@ -90,9 +84,9 @@
                             <div class="d-grid gap-2">
                                 <button class="btn btn-warning" type="submit" id="signInSubmit">Submit</button>
                             </div>
-                            
+
                             <br>
-                            
+
                             <div>
                                 <p class="text-center">
                                     <small>
