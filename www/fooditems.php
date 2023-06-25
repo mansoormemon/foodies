@@ -121,7 +121,7 @@
         $cardResult = mysqli_query($conn, $cardQuery);
         $cardRow = mysqli_fetch_assoc($cardResult);
       ?>
-        <div class="card ms-5 mt-5" style="width: 18rem;">
+        <div class="card ms-5 mt-5" style="width: 18rem;" id="<?php echo $cardRow['FOOD_ITEM_ID']; ?>">
           <img src="../res/images/sign_up_cover.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title"><?php echo $cardRow['NAME']; ?></h5>
