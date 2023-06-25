@@ -111,167 +111,31 @@
         <h1 class="text-center">We offer the best Restaurants countrywide.</h1>
         <div class="container-fluid">
             <div class="row">
-                <div class="card ms-5 mt-5" style="width: 18rem;">
-                    <img src="../res/images/restpic1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Restaurant 1</h5>
-                        <p class="card-text">"Savor an unforgettable culinary journey with our restaurant's delectable
-                            creations and inviting ambiance."</p>
-                        <a data-bs-target="#Menu" data-bs-toggle="modal" href="#" class="btn btn-primary">Menu</a>
-                    </div>
-                </div>
-                <div class="card ms-5 mt-5" style="width: 18rem;">
-                    <img src="../res/images/restpic1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Restaurant 1</h5>
-                        <p class="card-text">"Savor an unforgettable culinary journey with our restaurant's delectable
-                            creations and inviting ambiance."</p>
-                        <a data-bs-target="#Menu" data-bs-toggle="modal" href="#" class="btn btn-primary">Menu</a>
-                    </div>
-                </div>
-                <div class="card ms-5 mt-5" style="width: 18rem;">
-                    <img src="../res/images/restpic1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Restaurant 1</h5>
-                        <p class="card-text">"Savor an unforgettable culinary journey with our restaurant's delectable
-                            creations and inviting ambiance."</p>
-                        <a data-bs-target="#Menu" data-bs-toggle="modal" href="#" class="btn btn-primary">Menu</a>
-                    </div>
-                </div>
-                <div class="card ms-5 mt-5" style="width: 18rem;">
-                    <img src="../res/images/restpic1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Restaurant 1</h5>
-                        <p class="card-text">"Savor an unforgettable culinary journey with our restaurant's delectable
-                            creations and inviting ambiance."</p>
-                        <a data-bs-target="#Menu" data-bs-toggle="modal" href="#" class="btn btn-primary">Menu</a>
-                    </div>
-                </div>
-            </div>
 
+            <?php
+            include 'dbh.php';
+            $query = "SELECT COUNT(*) as total_rows FROM restaurant";
+            $result = mysqli_query($conn, $query);
+            $row = mysqli_fetch_assoc($result);
+            $totalRows = $row['total_rows'];
 
+             for ($i = 0; $i < $totalRows; $i++) {
+                $cardQuery = "SELECT * FROM restaurant LIMIT $i, 1";
+                $cardResult = mysqli_query($conn, $cardQuery);
+                $cardRow = mysqli_fetch_assoc($cardResult);
+            ?>
 
-            <div class="row">
                 <div class="card ms-5 mt-5" style="width: 18rem;">
                     <img src="../res/images/restpic1.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Restaurant 1</h5>
-                        <p class="card-text">"Savor an unforgettable culinary journey with our restaurant's delectable
-                            creations and inviting ambiance."</p>
+                        <h5 class="card-title"><?php echo $cardRow['NAME']; ?></h5>
+                        <p class="card-text"><?php echo $cardRow['ADDRESS']; ?></p>
                         <a data-bs-target="#Menu" data-bs-toggle="modal" href="#" class="btn btn-primary">Menu</a>
                     </div>
                 </div>
-                <div class="card ms-5 mt-5" style="width: 18rem;">
-                    <img src="../res/images/restpic1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Restaurant 1</h5>
-                        <p class="card-text">"Savor an unforgettable culinary journey with our restaurant's delectable
-                            creations and inviting ambiance."</p>
-                        <a data-bs-target="#Menu" data-bs-toggle="modal" href="#" class="btn btn-primary">Menu</a>
-                    </div>
-                </div>
-                <div class="card ms-5 mt-5" style="width: 18rem;">
-                    <img src="../res/images/restpic1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Restaurant 1</h5>
-                        <p class="card-text">"Savor an unforgettable culinary journey with our restaurant's delectable
-                            creations and inviting ambiance."</p>
-                        <a data-bs-target="#Menu" data-bs-toggle="modal" href="#" class="btn btn-primary">Menu</a>
-                    </div>
-                </div>
-                <div class="card ms-5 mt-5" style="width: 18rem;">
-                    <img src="../res/images/restpic1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Restaurant 1</h5>
-                        <p class="card-text">"Savor an unforgettable culinary journey with our restaurant's delectable
-                            creations and inviting ambiance."</p>
-                        <a data-bs-target="#Menu" data-bs-toggle="modal" href="#" class="btn btn-primary">Menu</a>
-                    </div>
-                </div>
-            </div>
+                <?php } ?>
 
-
-            <div class="row">
-                <div class="card ms-5 mt-5" style="width: 18rem;">
-                    <img src="../res/images/restpic1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Restaurant 1</h5>
-                        <p class="card-text">"Savor an unforgettable culinary journey with our restaurant's delectable
-                            creations and inviting ambiance."</p>
-                        <a data-bs-target="#Menu" data-bs-toggle="modal" href="#" class="btn btn-primary">Menu</a>
-                    </div>
-                </div>
-                <div class="card ms-5 mt-5" style="width: 18rem;">
-                    <img src="../res/images/restpic1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Restaurant 1</h5>
-                        <p class="card-text">"Savor an unforgettable culinary journey with our restaurant's delectable
-                            creations and inviting ambiance."</p>
-                        <a data-bs-target="#Menu" data-bs-toggle="modal" href="#" class="btn btn-primary">Menu</a>
-                    </div>
-                </div>
-                <div class="card ms-5 mt-5" style="width: 18rem;">
-                    <img src="../res/images/restpic1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Restaurant 1</h5>
-                        <p class="card-text">"Savor an unforgettable culinary journey with our restaurant's delectable
-                            creations and inviting ambiance."</p>
-                        <a data-bs-target="#Menu" data-bs-toggle="modal" href="#" class="btn btn-primary">Menu</a>
-                    </div>
-                </div>
-                <div class="card ms-5 mt-5" style="width: 18rem;">
-                    <img src="../res/images/restpic1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Restaurant 1</h5>
-                        <p class="card-text">"Savor an unforgettable culinary journey with our restaurant's delectable
-                            creations and inviting ambiance."</p>
-                        <a data-bs-target="#Menu" data-bs-toggle="modal" href="#" class="btn btn-primary">Menu</a>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="row">
-                <div class="card ms-5 mt-5" style="width: 18rem;">
-                    <img src="../res/images/restpic1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Restaurant 1</h5>
-                        <p class="card-text">"Savor an unforgettable culinary journey with our restaurant's delectable
-                            creations and inviting ambiance."</p>
-                        <a data-bs-target="#Menu" data-bs-toggle="modal" href="#" class="btn btn-primary">Menu</a>
-                    </div>
-                </div>
-                <div class="card ms-5 mt-5" style="width: 18rem;">
-                    <img src="../res/images/restpic1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Restaurant 1</h5>
-                        <p class="card-text">"Savor an unforgettable culinary journey with our restaurant's delectable
-                            creations and inviting ambiance."</p>
-                        <a data-bs-target="#Menu" data-bs-toggle="modal" href="#" class="btn btn-primary">Menu</a>
-                    </div>
-                </div>
-                <div class="card ms-5 mt-5" style="width: 18rem;">
-                    <img src="../res/images/restpic1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Restaurant 1</h5>
-                        <p class="card-text">"Savor an unforgettable culinary journey with our restaurant's delectable
-                            creations and inviting ambiance."</p>
-                        <a data-bs-target="#Menu" data-bs-toggle="modal" href="#" class="btn btn-primary">Menu</a>
-                    </div>
-                </div>
-                <div class="card ms-5 mt-5" style="width: 18rem;">
-                    <img src="../res/images/restpic1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Restaurant 1</h5>
-                        <p class="card-text">"Savor an unforgettable culinary journey with our restaurant's delectable
-                            creations and inviting ambiance."</p>
-                        <a data-bs-target="#Menu" data-bs-toggle="modal" href="#" class="btn btn-primary">Menu</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                
 
     <div class="modal fade" id="Menu" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="signUpTermsDialogLabel" aria-hidden="true">
