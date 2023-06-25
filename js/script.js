@@ -51,25 +51,43 @@ $(document).ready(() => {
 });
 
 function fmt_label(label, value) {
-    return "<p><b>" + label +"</b>: " + value + "</p>";
+  return "<p><b>" + label + "</b>: " + value + "</p>";
 }
 
 function link_food_item(id) {
-  return "<a href=\"www/fooditems.php#" + id + "\">See More</a>";
+  return '<a href="www/fooditems.php#' + id + '">See More</a>';
+}
+
+function link_restaurant(id) {
+  return '<a href="www/restaurant.php#' + id + '">See More</a>';
 }
 
 function food_items_formatter(food_items) {
-    let out = "<div class=\"container p-3\">";
-    food_items.forEach(element => {
-        out += "<div class=\"card p-2\"><br>";
-        out += fmt_label("ID", element.id);
-        out += fmt_label("Name", element.name);
-        out += fmt_label("Price", "Rs. " + element.price);
-        out += fmt_label("Description", element.desc + ".");
-        out += link_food_item(element.id);
-        out += "</div><br>";
-    }); 
-    out += "</div>";
+  let out = '<div class="container p-3">';
+  food_items.forEach((element) => {
+    out += '<div class="card p-2"><br>';
+    out += fmt_label("ID", element.id);
+    out += fmt_label("Name", element.name);
+    out += fmt_label("Price", "Rs. " + element.price);
+    out += fmt_label("Description", element.desc + ".");
+    out += link_food_item(element.id);
+    out += "</div><br>";
+  });
+  out += "</div>";
+  return out;
+}
+
+function restaurants_formatter(restaurants) {
+  let out = '<div class="container p-3">';
+  restaurants.forEach((element) => {
+    out += '<div class="card p-2"><br>';
+    out += fmt_label("ID", element.id);
+    out += fmt_label("Name", element.name);
+    out += fmt_label("Address", element.address);
+    out += link_restaurant(element.id);
+    out += "</div><br>";
+  });
+  out += "</div>";
   return out;
 }
 
@@ -103,9 +121,17 @@ function handleSearch() {
         response = JSON.parse(response);
         matchCount = response.length;
         if (matchCount == 0) {
-            response = "No matches found.";
+          response = "No matches found.";
         } else {
-            response = food_items_formatter(response);
+          response = food_items_formatter(response);
+        }
+      } else if (filterBasedOn == "restaurants") {
+        response = JSON.parse(response);
+        matchCount = response.length;
+        if (matchCount == 0) {
+          response = "No matches found.";
+        } else {
+          response = restaurants_formatter(response);
         }
       } else {
         response = "none";
