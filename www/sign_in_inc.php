@@ -6,14 +6,14 @@
     $email = $_POST['signInEmail'];
     $password = $_POST['signInPassword'];
 
-    $sql = "SELECT PASSWORD FROM customer WHERE EMAIL = '$email'";
+    $sql = "SELECT PASSCODE FROM customer WHERE EMAIL = '$email'";
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
-        $hashedPassword = $row['PASSWORD'];
+        $storedPassword = $row['PASSCODE'];
 
-        if (password_verify("$password", $hashedPassword)) {
+        if ($password == $storedPassword) {
             $sql_get_cust_id = "SELECT CUSTOMER_ID FROM customer WHERE EMAIL = \"$email\";";
             $result = mysqli_query($conn, $sql_get_cust_id);
             $record = mysqli_fetch_assoc($result);

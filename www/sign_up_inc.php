@@ -7,8 +7,6 @@
     $password = $_POST['signUpPassword'];
     $contact = $_POST['signUpContact'];
 
-    $hashedPwInDb = password_hash("$password", PASSWORD_DEFAULT);
-
     $sql = "SELECT EMAIL FROM customer WHERE EMAIL = '$email'";
     $result = mysqli_query($conn, $sql);
 
@@ -16,7 +14,7 @@
         header("Location: sign_up.php?e=0");
     }
     else {
-        $sql = "INSERT INTO customer (EMAIL, PASSWORD, CONTACT) VALUES ('$email', '$hashedPwInDb', '$contact');";
+        $sql = "INSERT INTO customer (EMAIL, PASSCODE, CONTACT) VALUES ('$email', '$password', '$contact');";
 
         if (mysqli_query($conn, $sql)){
             $sql_get_cust_id = "SELECT CUSTOMER_ID FROM customer WHERE EMAIL = \"$email\";";
