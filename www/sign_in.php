@@ -70,7 +70,14 @@ if ($is_err) {
 
                             <div class="mb-3">
                                 <label for="signInPassword" class="form-label">Password:</label>
-                                <input type="password" class="form-control" name="signInPassword" id="signInPassword" height="32px">
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="signInPassword"
+                                        name="signInPassword" height="32px" minlength="8" required>
+                                    <span class="input-group-text" id="signInShowPassword">
+                                        <i class="fa fa-eye" id="signInEye" aria-hidden="true"></i>
+                                        <i class="fa fa-eye-slash d-none" id="signInEyeSlash" aria-hidden="true"></i>
+                                    </span>
+                                </div>
                             </div>
 
                             <div class="mb-3">

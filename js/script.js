@@ -18,6 +18,16 @@ $(document).ready(() => {
     $("#signUpEyeSlash").toggleClass("d-none");
   });
 
+  $("#signInShowPassword").click(() => {
+    var signInPassword = $("#signInPassword");
+    signInPassword.attr(
+      "type",
+      signInPassword.attr("type") == "password" ? "text" : "password"
+    );
+    $("#signInEye").toggleClass("d-none");
+    $("#signInEyeSlash").toggleClass("d-none");
+  });
+
   handleSearch();
 
   // Fetch all the forms we want to apply custom Bootstrap validation styles.
@@ -59,7 +69,11 @@ function food_items_formatter(food_items) {
 }
 
 function handleSearch() {
-  let searchQuery = document.getElementById("indexPageFilter").value.trim();
+  let searchQuery = document.getElementById("indexPageFilter");
+  if (searchQuery == null) {
+    return;
+  }
+  searchQuery = searchQuery.value.trim();
   let filterBasedOn = document.getElementById("filterBasedOn").value;
 
   let matches = document.getElementById("matches");

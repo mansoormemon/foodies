@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,6 +41,19 @@
         @import url('https://fonts.googleapis.com/css2?family=Heebo&family=Inter:wght@400;700;800&family=Roboto:wght@700&display=swap');
     </style>
 </head>
+
+<?php
+include "dbh.php";
+
+$is_logged_in = isset($_SESSION["CUSTOMER_ID"]);
+
+if ($is_logged_in) {
+    $cust_id = $_SESSION['CUSTOMER_ID'];
+    $sql = "SELECT * FROM customer where CUSTOMER_ID = $cust_id;";
+    $result = mysqli_query($conn, $sql);
+    $record = mysqli_fetch_assoc($result);
+}
+?>
 
 <script>
     function CardMaking() {
@@ -124,15 +141,27 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Cart</a>
                     </li>
-                    </li>
                 </ul>
                 <ul class="navbar-nav mb-2 mb-lg-0 row gx-1">
-                    <li class="col p-1 container-fluid d-flex">
-                        <a href="sign_up.php" style="width:6rem;" class="col btn btn-outline-danger m-1">Sign Up</a>
-                    </li>
-                    <li class="col p-1 container-fluid d-flex">
-                        <a href="sign_in.php" style="width:6rem;" class="col btn btn-outline-dark m-1">Sign In</a>
-                    </li>
+                    <?php
+                    if ($is_logged_in) {
+                    ?>
+                        <form class="input-group" action="logout.php">
+                            <label type="text" class="form-control"><?php echo $record["EMAIL"]; ?></label>
+                            <input class="input-group-text btn btn-success" type="submit" value="Log Out">
+                        </form>
+                    <?php
+                    } else {
+                    ?>
+                        <li class="col p-1 container-fluid d-flex">
+                            <a href="sign_up.php" class="col btn btn-outline-danger m-1" style="min-width: 96px;">Sign Up</a>
+                        </li>
+                        <li class="col p-1 container-fluid d-flex">
+                            <a href="sign_in.php" class="col btn btn-outline-dark m-1" style="min-width: 96px;">Sign In</a>
+                        </li>
+                    <?php
+                    }
+                    ?>
                 </ul>
             </div>
         </div>
