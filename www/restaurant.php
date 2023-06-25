@@ -26,9 +26,6 @@
 
     <!-- Font Awesome v6.3 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Option 1: Include in HTML -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.ne t/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
     <link rel="stylesheet" href="../css/index.css">
     <style>
@@ -120,9 +117,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="cart.php">Cart</a>
                     </li>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Trending</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav mb-2 mb-lg-0 row gx-1">

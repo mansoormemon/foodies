@@ -125,9 +125,6 @@
                         <a class="nav-link" href="#">Cart</a>
                     </li>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Trending</a>
-                    </li>
                 </ul>
                 <ul class="navbar-nav mb-2 mb-lg-0 row gx-1">
                     <li class="col p-1 container-fluid d-flex">

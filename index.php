@@ -30,9 +30,6 @@ session_start();
 
     <!-- Font Awesome v6.3 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Option 1: Include in HTML -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
     <link rel="stylesheet" href="css/index.css">
     <style>
@@ -84,9 +81,6 @@ if ($is_logged_in) {
                     <li class="nav-item">
                         <a class="nav-link" href="#">Cart</a>
                     </li>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Trending</a>
                     </li>
                 </ul>
 
