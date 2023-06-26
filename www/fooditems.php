@@ -131,7 +131,7 @@ if ($is_logged_in) {
                     </li>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cart.php">Cart</a>
+                        <a class="nav-link" href="cart1.php">Cart</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav mb-2 mb-lg-0 row gx-1">
