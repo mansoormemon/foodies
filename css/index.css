@@ -40,7 +40,14 @@ section {
     position: relative;
     right: 1.5vw;
 }
-.j5{
-    display:none;
-    
+
+.j5 {
+    display: none;
+
+}
+
+@media only screen and (max-width: 1000px) {
+    .total{
+        width:100%;
+    }
 }

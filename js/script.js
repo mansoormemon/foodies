@@ -108,9 +108,9 @@ function handleSearch() {
   xhr.open(
     "GET",
     "./www/search.php?query=" +
-      encodeURIComponent(searchQuery) +
-      "&basedOn=" +
-      encodeURIComponent(filterBasedOn),
+    encodeURIComponent(searchQuery) +
+    "&basedOn=" +
+    encodeURIComponent(filterBasedOn),
     true
   );
   xhr.onreadystatechange = function () {
@@ -145,4 +145,18 @@ function handleSearch() {
     }
   };
   xhr.send();
+}
+
+
+//For the display of card details
+function handleDropdownChange() {
+  var dropdown = document.getElementById("dropdown");
+  var selectedOption = dropdown.value;
+  var togglebox = document.getElementsByClassName("togglebox");
+
+  if (selectedOption == "Card") {
+    togglebox[0].style.display = "block";
+  } else {
+    togglebox[0].style.display = "none";
+  }
 }
