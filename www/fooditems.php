@@ -198,7 +198,6 @@ if ($is_logged_in) {
                             <div class="d-flex justify-content-center align-items-center">
                                 <div class="btn-group">
                                     <button type="button" onclick="CartAdd()" data-bs-toggle="modal" data-bs-target="#Cartlist" class="btn btn-sm btn-outline-danger">Add to cart</button>
-                                    <button type="button" data-bs-toggle="modal" data-bs-target="#ItemDescription" class="btn btn-sm btn-outline-danger">View details</button>
                                 </div>
                             </div>
                         </div>
@@ -228,29 +227,6 @@ if ($is_logged_in) {
     </div>
 
 
-    <div class="modal fade" id="ItemDescription" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="signUpTermsDialogLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1>Item Description</h1>
-                </div>
-                <div class="modal-body">
-                    <p>Deluxe Cheeseburger: Sink your teeth into our Deluxe Cheeseburger, a true fast food classic. We
-                        start with a juicy, flame-grilled beef patty cooked to perfection and top it with a slice of
-                        melted cheddar cheese. Nestled between fresh, toasted sesame seed buns, this burger is dressed
-                        with crisp lettuce, ripe tomatoes, tangy pickles, and our signature secret sauce, adding just
-                        the right amount of tang and creaminess. Every bite delivers a satisfying combination of flavors
-                        and textures that will leave you craving more. Perfectly accompanied by our golden, crispy
-                        fries, it's a meal that satisfies your fast food cravings in the best way possible ~</p>
-                </div>
-
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>

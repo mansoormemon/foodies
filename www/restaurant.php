@@ -52,58 +52,7 @@ if ($is_logged_in) {
 }
 ?>
 
-<script>
-    function CardMaking() {
-        var cardContainer = document.createElement("div");
-        cardContainer.className = "card";
 
-        var row = document.createElement("div");
-        row.className = "row g-0";
-
-        var colImage = document.createElement("div");
-        colImage.className = "col-md-4";
-
-        var cardImage = document.createElement("img");
-        cardImage.src = "your-image.jpg";
-        cardImage.className = "card-img";
-        cardImage.alt = "Image";
-
-        colImage.appendChild(cardImage);
-
-        var colBody = document.createElement("div");
-        colBody.className = "col-md-8";
-
-        var cardBody = document.createElement("div");
-        cardBody.className = "card-body d-flex flex-column align-items-end";
-
-        var cardTitle = document.createElement("h5");
-        cardTitle.className = "card-title upside-down-text";
-        cardTitle.innerText = "Upside Down Title";
-
-        var cardDescription = document.createElement("p");
-        cardDescription.className = "card-text upside-down-text";
-        cardDescription.innerText = "Upside Down Description";
-
-        cardBody.appendChild(cardTitle);
-        cardBody.appendChild(cardDescription);
-
-        colBody.appendChild(cardBody);
-
-        row.appendChild(colImage);
-        row.appendChild(colBody);
-        cardContainer.appendChild(row);
-        return cardContainer;
-    }
-
-    function Selected() {
-        var d1 = document.getElementsByClassName("c1");
-        d1[0].innerHTML = " ";
-        for (let i = 1; i <= 10; i++) {
-            d1[0].appendChild(CardMaking());
-        }
-
-    }
-</script>
 
 <body>
     <!-- Navigation Bar -->
@@ -172,74 +121,99 @@ if ($is_logged_in) {
         </div>
     </section>
 
-    <!-- Restaurant Section -->
+   <!-- Restaurant Section -->
+<div class="parent container-fluid section p-4">
+    <h1 class="text-center">We offer the best Restaurants countrywide.</h1>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <?php
+            include 'dbh.php';
+            $query = "SELECT COUNT(*) as total_rows FROM restaurant";
+            $result = mysqli_query($conn, $query);
+            $row = mysqli_fetch_assoc($result);
+            $totalRows = $row['total_rows'];
 
-    <div class="parent container-fluid section p-4">
-        <h1 class="text-center">We offer the best Restaurants countrywide.</h1>
-        <div class="container-fluid">
-            <div class="row justify-content-center">
+            for ($i = 0; $i < $totalRows; $i++) {
+                $cardQuery = "SELECT * FROM restaurant LIMIT $i, 1";
+                $cardResult = mysqli_query($conn, $cardQuery);
+                $cardRow = mysqli_fetch_assoc($cardResult);
+            ?>
 
-                <?php
-                include 'dbh.php';
-                $query = "SELECT COUNT(*) as total_rows FROM restaurant";
-                $result = mysqli_query($conn, $query);
-                $row = mysqli_fetch_assoc($result);
-                $totalRows = $row['total_rows'];
-
-                for ($i = 0; $i < $totalRows; $i++) {
-                    $cardQuery = "SELECT * FROM restaurant LIMIT $i, 1";
-                    $cardResult = mysqli_query($conn, $cardQuery);
-                    $cardRow = mysqli_fetch_assoc($cardResult);
-                ?>
-
-                    <div class="card m-5" style="width: 18rem;" id="<?php echo $cardRow['RESTAURANT_ID']; ?>">
-                        <img src="../res/images/restpic1.jpg" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title text-center"><?php echo $cardRow['NAME']; ?></h5>
-                            <p class="card-text text-center"><?php echo $cardRow['ADDRESS']; ?></p>
-                            <div class="d-grid">
-                                <a data-bs-target="#Menu" data-bs-toggle="modal" href="#" class="btn btn-success w-full">Menu</a>
-                            </div>
-
+                <div class="card m-5" style="width: 18rem;" id="<?php echo $cardRow['RESTAURANT_ID']; ?>">
+                    <img src="../res/images/restpic1.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title text-center"><?php echo $cardRow['NAME']; ?></h5>
+                        <p class="card-text text-center"><?php echo $cardRow['ADDRESS']; ?></p>
+                        <div class="d-grid">
+                            <a data-bs-target="#Menu<?php echo $cardRow['RESTAURANT_ID']; ?>" data-bs-toggle="modal" href="#" class="btn btn-success w-full">Menu</a>
                         </div>
                     </div>
-                <?php } ?>
+                </div>
+            <?php } ?>
 
+            <?php
+            // Fetch and store all the food items grouped by restaurant
+            $foodItemsQuery = "SELECT r.RESTAURANT_ID, r.NAME AS RESTAURANT_NAME, f.FOOD_ITEM_ID, f.NAME, f.PRICE, f.DESCRIPTION
+                                       FROM restaurantitem ri
+                                       INNER JOIN fooditem f ON ri.FOOD_ITEM_ID = f.FOOD_ITEM_ID
+                                       INNER JOIN restaurant r ON ri.RESTAURANT_ID = r.RESTAURANT_ID
+                                       ORDER BY r.RESTAURANT_ID";
+            $foodItemsResult = mysqli_query($conn, $foodItemsQuery);
 
-                <div class="modal fade" id="Menu" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="signUpTermsDialogLabel" aria-hidden="true">
+            // Create an array to store the food items by restaurant ID
+            $restaurantFoodItems = array();
+            while ($row = mysqli_fetch_assoc($foodItemsResult)) {
+                $restaurantID = $row['RESTAURANT_ID'];
+                if (!isset($restaurantFoodItems[$restaurantID])) {
+                    $restaurantFoodItems[$restaurantID] = array(
+                        'RESTAURANT_NAME' => $row['RESTAURANT_NAME'],
+                        'FOOD_ITEMS' => array()
+                    );
+                }
+
+                $foodItem = array(
+                    'FOOD_ITEM_ID' => $row['FOOD_ITEM_ID'],
+                    'NAME' => $row['NAME'],
+                    'PRICE' => $row['PRICE'],
+                    'DESCRIPTION' => $row['DESCRIPTION']
+                );
+                $restaurantFoodItems[$restaurantID]['FOOD_ITEMS'][] = $foodItem;
+            }
+
+            // Generate the menu modals for each restaurant
+            foreach ($restaurantFoodItems as $restaurantID => $restaurant) {
+            ?>
+                <div class="modal fade" id="Menu<?php echo $restaurantID; ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="signUpTermsDialogLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1>Menu</h1>
+                                <h1><?php echo $restaurant['RESTAURANT_NAME']; ?> Menu</h1>
                             </div>
                             <div class="modal-body">
-                                <ul class="nav nav-tabs">
-                                    <li class="nav-item">
-                                        <a style="cursor:pointer;" class="nav-link" onclick="Selected()" aria-current="page">Cuisines</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a style="cursor:pointer;" class="nav-link" onclick="Selected()">Burger</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a style="cursor:pointer;" class="nav-link" onclick="Selected()">Pizza</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a style="cursor:pointer;" class="nav-link" onclick="Selected()">Discounted Deals</a>
-                                    </li>
-                                </ul>
-                                <div class="c1 container-fluid"></div>
+                                <div class="container">
+                                    <?php
+                                    $foodItems = $restaurant['FOOD_ITEMS'];
+                                    foreach ($foodItems as $foodItem) {
+                                    ?><div class="card mb-3"><div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><?php echo $foodItem['NAME']; ?></h5>
+                                                <p class="card-text"><?php echo $foodItem['DESCRIPTION']; ?></p>
+                                                <p class="card-text">Price: Rs. <?php echo $foodItem['PRICE']; ?></p>
+                                                <p class="card-text"><a href="fooditems.php#<?php echo $foodItem['FOOD_ITEM_ID']; ?>">See more</a></p>
+                                            </div>
+                                        </div></div>
+                                        
+                                    <?php } ?>
+                                </div>
                             </div>
-
-
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            <?php } ?>
+
         </div>
     </div>
-</body>
-
-</html>
+</div>
