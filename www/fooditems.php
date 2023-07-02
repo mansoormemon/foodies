@@ -187,7 +187,7 @@ if ($is_logged_in) {
                     $cardResult = mysqli_query($conn, $cardQuery);
                     $cardRow = mysqli_fetch_assoc($cardResult);
                 ?>
-                    <div class="card m-5" style="width: 24rem;" id="<?php echo $cardRow['FOOD_ITEM_ID']; ?>">
+                    <div class="card m-5 p-0" style="width: 24rem;" id="<?php echo $cardRow['FOOD_ITEM_ID']; ?>">
                         <img src="../res/images/sign_up_cover.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title text-center"><?php echo $cardRow['NAME']; ?></h5>
