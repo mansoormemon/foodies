@@ -127,15 +127,21 @@ if ($is_logged_in) {
                 </thead>
                 <tbody>
                     <?php
+                        $total_price = 0;
                         $counter = 1;
                         foreach ($_SESSION["CART_ITEMS"] as $food_item_id => $quantity) {
+                            $query = "select NAME, PRICE from fooditem where FOOD_ITEM_ID ='$food_item_id';";
+                            $rows = mysqli_query($conn, $query);
+                            $food_item = mysqli_fetch_assoc($rows);
+                            $partial_total = $food_item["PRICE"] * $quantity;
+                            $total_price = $total_price + $partial_total;
                     ?>
                         <tr>
                             <th scope="row"><?php echo $counter ?></th>
-                            <td>Item</td>
-                            <td>Price</td>
+                            <td><?php echo $food_item["NAME"] ?></td>
+                            <td>Rs. <?php echo $food_item["PRICE"] ?></td>
                             <td><?php echo $quantity ?></td>
-                            <td>Total</td>
+                            <td>Rs. <?php echo $partial_total ?></td>
                         </tr>
                     <?php
                         $counter++;
@@ -148,7 +154,7 @@ if ($is_logged_in) {
         <div class="row w-100 checkout d-flex flex-column align-items-end p-2">
             <div class="total d-flex flex-row col-12 col-lg-6 justify-content-between" style="height:10vh;">
                 <h6 class="ms-1 mt-3 fs-5 fw-bold">Grand total:</h6>
-                <h6 class="ms-1 mt-3 fs-5 fw-bold">$1,019.98</h6>
+                <h6 class="ms-1 mt-3 fs-5 fw-bold">Rs. <?php echo $total_price ?></h6>
             </div>
             <div class="d-flex flex-row justify-content-end mt-4 btnbox w-50">
                 <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#checkout">
