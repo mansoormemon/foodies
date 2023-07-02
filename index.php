@@ -43,8 +43,8 @@ session_start();
 include "www/dbh.php";
 
 $_SESSION["CART_ITEMS"] = $array = [
-    "foo" => "bar",
-    "bar" => "foo",
+    2 => 4,
+    1 => 5,
 ];
 
 $is_logged_in = isset($_SESSION["CUSTOMER_ID"]);
