@@ -42,6 +42,11 @@ session_start();
 <?php
 include "www/dbh.php";
 
+$_SESSION["CART_ITEMS"] = $array = [
+    "foo" => "bar",
+    "bar" => "foo",
+];
+
 $is_logged_in = isset($_SESSION["CUSTOMER_ID"]);
 
 if ($is_logged_in) {
@@ -67,7 +72,7 @@ if ($is_logged_in) {
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
+                    <li class="nav-item border-bottom border-danger border-2">
                         <a class="nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item active">
@@ -79,7 +84,7 @@ if ($is_logged_in) {
                     </li>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="www/cart1.php">Cart</a>
+                        <a class="nav-link" href="www/cart.php">Cart</a>
                     </li>
                     </li>
                 </ul>

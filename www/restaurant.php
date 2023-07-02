@@ -72,7 +72,7 @@ if ($is_logged_in) {
                     <li class="nav-item">
                         <a class="nav-link" href="../index.php">Home</a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item active border-bottom border-danger border-2">
                         <a class="nav-link" href="#">Restaurants<span class="sr-only">(current)</span></a>
                     </li>
 
@@ -81,7 +81,7 @@ if ($is_logged_in) {
                     </li>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cart1.php">Cart</a>
+                        <a class="nav-link" href="cart.php">Cart</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav mb-2 mb-lg-0 row gx-1">

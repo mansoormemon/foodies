@@ -126,12 +126,12 @@ if ($is_logged_in) {
                     <li class="nav-item active">
                         <a class="nav-link" href="restaurant.php">Restaurants<span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item border-bottom border-danger border-2">
                         <a class="nav-link" href="#">Food Items</a>
                     </li>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cart1.php">Cart</a>
+                        <a class="nav-link" href="cart.php">Cart</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav mb-2 mb-lg-0 row gx-1">
@@ -225,8 +225,6 @@ if ($is_logged_in) {
             </div>
         </div>
     </div>
-
-
 </body>
 
 </html>

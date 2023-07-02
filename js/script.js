@@ -108,9 +108,9 @@ function handleSearch() {
   xhr.open(
     "GET",
     "./www/search.php?query=" +
-    encodeURIComponent(searchQuery) +
-    "&basedOn=" +
-    encodeURIComponent(filterBasedOn),
+      encodeURIComponent(searchQuery) +
+      "&basedOn=" +
+      encodeURIComponent(filterBasedOn),
     true
   );
   xhr.onreadystatechange = function () {
@@ -147,16 +147,27 @@ function handleSearch() {
   xhr.send();
 }
 
-
 //For the display of card details
 function handleDropdownChange() {
-  var dropdown = document.getElementById("dropdown");
+  var dropdown = document.getElementById("paymentMethod");
   var selectedOption = dropdown.value;
   var togglebox = document.getElementsByClassName("togglebox");
 
+  var creditCardNumber = document.getElementById("creditCardNumber");
+  var creditCardDate = document.getElementById("creditCardDate");
+  var creditCardCode = document.getElementById("creditCardCode");
+
   if (selectedOption == "Card") {
     togglebox[0].style.display = "block";
+
+    creditCardNumber.required = true;
+    creditCardDate.required = true;
+    creditCardCode.required = true;
   } else {
     togglebox[0].style.display = "none";
+
+    creditCardNumber.required = false;
+    creditCardDate.required = false;
+    creditCardCode.required = false;
   }
 }
