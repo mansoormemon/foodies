@@ -138,7 +138,6 @@ if ($is_logged_in) {
                 <div class="modal-header">
                     <input class="form-control me-2" type="search" id="indexPageFilter" placeholder="Search" aria-label="Search" oninput="handleSearch()" autocomplete="false">
                     <i style="font-size: 3vh; padding-right: 4px;" class="bi bi-filter"></i>
-
                     <select class="dropdown" id="filterBasedOn" onchange="handleSearch()">
                         <option value="restaurants">Restaurants</option>
                         <option value="food_items" selected>Food items</option>
