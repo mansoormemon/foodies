@@ -122,19 +122,19 @@ if ($is_logged_in) {
                         <th scope="col">Item</th>
                         <th scope="col">Price</th>
                         <th scope="col">Quantity</th>
-                        <th scope="col">Total</th>
+                        <th scope="col">Total / Item</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                        $total_price = 0;
-                        $counter = 1;
-                        foreach ($_SESSION["CART_ITEMS"] as $food_item_id => $quantity) {
-                            $query = "select NAME, ROUND(PRICE, 0) PRICE from fooditem where FOOD_ITEM_ID ='$food_item_id';";
-                            $rows = mysqli_query($conn, $query);
-                            $food_item = mysqli_fetch_assoc($rows);
-                            $partial_total = $food_item["PRICE"] * $quantity;
-                            $total_price = $total_price + $partial_total;
+                    $total_price = 0;
+                    $counter = 1;
+                    foreach ($_SESSION["CART_ITEMS"] as $food_item_id => $quantity) {
+                        $query = "select NAME, ROUND(PRICE, 0) PRICE from fooditem where FOOD_ITEM_ID ='$food_item_id';";
+                        $rows = mysqli_query($conn, $query);
+                        $food_item = mysqli_fetch_assoc($rows);
+                        $partial_total = $food_item["PRICE"] * $quantity;
+                        $total_price = $total_price + $partial_total;
                     ?>
                         <tr>
                             <th scope="row"><?php echo $counter ?></th>
@@ -154,13 +154,40 @@ if ($is_logged_in) {
         <hr>
 
         <div class="row w-100 checkout d-flex flex-column align-items-end p-2">
-            <div class="total d-flex flex-row col-12 col-lg-6 justify-content-between" style="height:10vh;">
-                <h6 class="ms-1 mt-3 fs-5 fw-bold">Grand total:</h6>
-                <h6 class="ms-1 mt-3 fs-5 fw-bold">Rs. <?php echo $total_price ?></h6>
+            <?php
+            $query = "SELECT * FROM loyalcustomer WHERE customer_id = '$cust_id'";
+            $result = mysqli_query($conn, $query);
+            if (mysqli_num_rows($result) > 0) {
+            ?>
+                <small>
+                    You are a loyal customer - <b>
+                        <?php
+                        $row = mysqli_fetch_assoc($result);
+                        $discount = $row["DISCOUNT"];
+                        echo $discount;
+                        ?>%</b> discount will be applied.
+                </small>
+            <?php
+            } else {
+            ?>
+                <small>No discount available - You do not have a loyalty card.</small>
+            <?php
+            }
+            ?>
+            <br>
+            <div class="total d-flex flex-row col-12 col-lg-6 justify-content-between">
+                <h6 class="ms-1 mt-3 fs-5 fw-bold">Net Total:</h6>
+                <h6 class="ms-1 mt-3 fs-5 fw-bold">Rs.
+                    <?php if (isset($discount)) {
+                        echo $total_price *  ((100 - $discount) / 100);
+                    } else {
+                        echo $total_price;
+                    } ?>
+                </h6>
             </div>
             <div class="d-flex flex-row justify-content-end mt-4 btnbox w-50">
                 <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#checkout">
-                    Check out
+                    Check Out
                 </button>
             </div>
         </div>
