@@ -151,6 +151,14 @@ if ($is_logged_in) {
             </table>
         </div>
 
+        <p class="text-center text-muted text-small">
+            <?php
+            if (count($_SESSION["CART_ITEMS"]) == 0) {
+                echo "No items in cart.";
+            }
+            ?>
+        </p>
+
         <hr>
 
         <div class="row w-100 checkout d-flex flex-column align-items-end p-2">
