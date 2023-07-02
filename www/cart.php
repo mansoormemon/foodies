@@ -53,7 +53,6 @@ if ($is_logged_in) {
 } else {
     header("Location: sign_in.php");
 }
-
 ?>
 
 <body>
@@ -114,21 +113,40 @@ if ($is_logged_in) {
     <div class="cartbox">
         <h1 class="mt-3 text-center fs-3 fw-bold">Your Cart</h1>
         <p class="text-center"><?php echo count($_SESSION["CART_ITEMS"]); ?> Item(s)</p>
-        <div class="container-fluid border border-top-2 border-bottom-2 p-3">
-            <div class="row text-center">
-                <div class="col">
-                    <h6 class="fw-bold">Item</h5>
-                </div>
-                <div class="col">
-                    <h6 class="fw-bold">Price</h5>
-                </div>
-                <div class="col">
-                    <h6 class="fw-bold">Total</h5>
-                </div>
-            </div>
+
+        <div class="ps-4 pe-4">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Item</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        $counter = 1;
+                        foreach ($_SESSION["CART_ITEMS"] as $food_item_id => $quantity) {
+                    ?>
+                        <tr>
+                            <th scope="row"><?php echo $counter ?></th>
+                            <td>Item</td>
+                            <td>Price</td>
+                            <td><?php echo $quantity ?></td>
+                            <td>Total</td>
+                        </tr>
+                    <?php
+                        $counter++;
+                    }
+                    ?>
+                </tbody>
+            </table>
         </div>
+
         <div class="row w-100 checkout d-flex flex-column align-items-end p-2">
-            <div class="total d-flex flex-row col-12 col-lg-6 justify-content-between" style="height:10vh;border-color:grey;">
+            <div class="total d-flex flex-row col-12 col-lg-6 justify-content-between" style="height:10vh;">
                 <h6 class="ms-1 mt-3 fs-5 fw-bold">Grand total:</h6>
                 <h6 class="ms-1 mt-3 fs-5 fw-bold">$1,019.98</h6>
             </div>
@@ -145,7 +163,8 @@ if ($is_logged_in) {
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1>Checkout</h1>
+                    <h3 class="modal-title">Check Out</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form class="p-5 needs-validation" novalidate action="checkout.php" method="post">
@@ -184,6 +203,7 @@ if ($is_logged_in) {
                 </div>
             </div>
         </div>
+    </div>
 </body>
 
 </html>

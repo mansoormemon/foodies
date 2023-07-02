@@ -28,6 +28,10 @@ $(document).ready(() => {
     $("#signInEyeSlash").toggleClass("d-none");
   });
 
+  var CART_ITEMS = {};
+  var CART_ITEMS_STR = JSON.stringify(CART_ITEMS);
+  localStorage.setItem("CART_ITEMS", CART_ITEMS_STR);
+
   handleSearch();
 
   // Fetch all the forms we want to apply custom Bootstrap validation styles.
@@ -170,4 +174,60 @@ function handleDropdownChange() {
     creditCardDate.required = false;
     creditCardCode.required = false;
   }
+}
+
+function CardMaking() {
+  var cardContainer = document.createElement("div");
+  cardContainer.className = "card";
+
+  var row = document.createElement("div");
+  row.className = "row g-0";
+
+  var colImage = document.createElement("div");
+  colImage.className = "col-md-4";
+
+  var cardImage = document.createElement("img");
+  cardImage.src = "your-image.jpg";
+  cardImage.className = "card-img";
+  cardImage.alt = "Image";
+
+  colImage.appendChild(cardImage);
+
+  var colBody = document.createElement("div");
+  colBody.className = "col-md-8";
+
+  var cardBody = document.createElement("div");
+  cardBody.className = "card-body d-flex flex-column align-items-end";
+
+  var cardTitle = document.createElement("h5");
+  cardTitle.className = "card-title upside-down-text";
+  cardTitle.innerText = "Food Item";
+
+  var cardDescription = document.createElement("p");
+  cardDescription.className = "card-text upside-down-text";
+  cardDescription.innerText = "Price";
+
+  cardBody.appendChild(cardTitle);
+  cardBody.appendChild(cardDescription);
+
+  colBody.appendChild(cardBody);
+
+  row.appendChild(colImage);
+  row.appendChild(colBody);
+  cardContainer.appendChild(row);
+  return cardContainer;
+}
+
+function CartAdd(food_item_id) {
+  // var j1 = document.getElementsByClassName("c1");
+  // j1[0].appendChild(CardMaking());
+
+  var CART_ITEMS_STR = localStorage.getItem('CART_ITEMS');
+  CART_ITEMS = JSON.parse(CART_ITEMS_STR);
+  alert(CART_ITEMS);
+}
+
+function Clear() {
+  var j1 = document.getElementsByClassName("c1");
+  j1[0].innerHTML = " ";
 }

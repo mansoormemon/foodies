@@ -42,10 +42,9 @@ session_start();
 <?php
 include "www/dbh.php";
 
-$_SESSION["CART_ITEMS"] = $array = [
-    2 => 4,
-    1 => 5,
-];
+if(!isset($_SESSION['CART_ITEMS'])) {
+    $_SESSION['CART_ITEMS'] = [];
+}
 
 $is_logged_in = isset($_SESSION["CUSTOMER_ID"]);
 
