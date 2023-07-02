@@ -130,7 +130,7 @@ if ($is_logged_in) {
                         $total_price = 0;
                         $counter = 1;
                         foreach ($_SESSION["CART_ITEMS"] as $food_item_id => $quantity) {
-                            $query = "select NAME, PRICE from fooditem where FOOD_ITEM_ID ='$food_item_id';";
+                            $query = "select NAME, ROUND(PRICE, 0) PRICE from fooditem where FOOD_ITEM_ID ='$food_item_id';";
                             $rows = mysqli_query($conn, $query);
                             $food_item = mysqli_fetch_assoc($rows);
                             $partial_total = $food_item["PRICE"] * $quantity;
@@ -150,6 +150,8 @@ if ($is_logged_in) {
                 </tbody>
             </table>
         </div>
+
+        <hr>
 
         <div class="row w-100 checkout d-flex flex-column align-items-end p-2">
             <div class="total d-flex flex-row col-12 col-lg-6 justify-content-between" style="height:10vh;">
