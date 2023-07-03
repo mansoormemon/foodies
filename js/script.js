@@ -91,27 +91,6 @@ function restaurants_formatter(restaurants) {
   return out;
 }
 
-function parseRangeString(rangeString) {
-  const regex = /^(>|<)?\s?(\d+)\s?(-\s?(\d+))?$/;
-
-  const match = rangeString.match(regex);
-
-  if (!match) {
-    // Invalid range string
-    return null;
-  }
-
-  const operator = match[1];
-  const lowerBound = parseInt(match[2]);
-  const upperBound = match[4] ? parseInt(match[4]) : lowerBound;
-
-  return {
-    operator,
-    lowerBound,
-    upperBound,
-  };
-}
-
 function handleSearch() {
   let searchQuery = document.getElementById("indexPageFilter");
   if (searchQuery == null) {
@@ -139,7 +118,7 @@ function handleSearch() {
       // Update the elements with the fetched data
       var response = xhr.responseText;
 
-      if (filterBasedOn == "food_items") {
+      if (filterBasedOn == "food_items" || filterBasedOn == "price") {
         response = JSON.parse(response);
         matchCount = response.length;
         if (matchCount == 0) {
@@ -155,17 +134,6 @@ function handleSearch() {
         } else {
           response = restaurants_formatter(response);
         }
-      } else if (filterBasedOn == "price") {
-        var ret_val = parseRangeString(searchQuery);
-        console.log(ret_val);
-        
-        if (ret_val == null) {
-          response = "Invalid range.";
-        }
-
-        console.log(ret_val);
-
-        response = "none";
       }
       if (matchCount > 0 && searchQuery != "") {
         matches.innerHTML = "<p>Matches: " + matchCount + "</p>";
